@@ -1,470 +1,471 @@
 /* DA COMPUTER */
 
 body{
-  background-color: white;
- /* background-color: #8fb1c6;
-   /*  background: linear-gradient(to right, #8fb1c6, #d3e7);*/
+    background-color: white;
+   /* background-color: #8fb1c6;
+     /*  background: linear-gradient(to right, #8fb1c6, #d3e7);*/
 }
 
 @font-face {
-font-family: 'BenchNine';
-src: url('../testo/BenchNine-Regular.woff2') format('woff2'),
-     url('../testo/BenchNine-Regular.woff') format('woff');
-font-weight: normal;
-font-style: normal;
-font-display: fallback;
+  font-family: 'BenchNine';
+  src: url(" <?= base_url('public/font/BenchNine-Regular.woff2'); ?>") format('woff2'),
+       url(" <?= base_url('public/font/BenchNine-Regular.woff'); ?>") format('woff');
+       
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
-font-family: 'CooperBlack';
-src: url('../testo/CooperBlack.woff2') format('woff2'),
-     url('../testo/CooperBlack.woff') format('woff');
-font-weight: normal;
-font-style: normal;
+  font-family: 'CooperBlack';
+  src: url(" <?= base_url('public/font/CooperBlack.woff2'); ?>") format('woff2'),
+       url(" <?= base_url('public/font/CooperBlack.woff'); ?>") format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 #testoSpeciale {
-font-family: 'BenchNine', sans-serif;
-font-size:2vw;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+  font-family: 'BenchNine', sans-serif;
+  font-size:2vw;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
 }
 
 #testoSpeciale1 {
-font-family: 'BenchNine', sans-serif;
-font-size:1.3vw;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+ font-family: 'BenchNine', sans-serif;
+  font-size:1.3vw;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
 }
 #testoSpeciale2 {
-font-family: 'BenchNine', sans-serif;
-font-size:1.3vw;
-text-align: justify;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+ font-family: 'BenchNine', sans-serif;
+  font-size:1.3vw;
+  text-align: justify;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
 }
 #testocatalogo {
-font-family: 'BenchNine', sans-serif;
-font-size:1.3vw;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+  font-family: 'BenchNine', sans-serif;
+  font-size:1.3vw;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
 }
 .rosso {
-color: red; /* Cambia il colore in rosso */
+  color: red; /* Cambia il colore in rosso */
 }
 .bianco {
-color: white; /* Cambia il colore in bianco */
-background-color: black; /* Aggiungi un background nero per il contrasto */
-padding: 2px 4px; /* Aggiungi spaziatura intorno al testo */
+  color: white; /* Cambia il colore in bianco */
+  background-color: black; /* Aggiungi un background nero per il contrasto */
+  padding: 2px 4px; /* Aggiungi spaziatura intorno al testo */
 }
 .oro{
-  color:#b3894f;
+    color:#b3894f;
 }
 
 .blog_title{
-  width: 80vw;
-  height: 7vw;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px 5px 0px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #b3894f;
-  color: white;
-  font-size: 2vw; 
- 
+    width: 80vw;
+    height: 7vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b3894f;
+    color: white;
+    font-size: 2vw; 
+   
 }
 
 .bottonehome {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #8c672e;
-  font-size: 1.5vw;
-  padding-top: 0.4vw;
-  padding-bottom: 0.4vw;
-  padding-right: 1vw;
-  padding-left: 1vw;
-  font-family: 'BenchNine', sans-serif;
-  color: white;
-  border: 1px solid #c9c5ae;
-  border-radius: 8px;
-   transition-duration: 0.4s;
-cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #8c672e;
+    font-size: 1.5vw;
+    padding-top: 0.4vw;
+    padding-bottom: 0.4vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-family: 'BenchNine', sans-serif;
+    color: white;
+    border: 1px solid #c9c5ae;
+    border-radius: 8px;
+     transition-duration: 0.4s;
+  cursor: pointer;
 }
 .bottonehome span {
-cursor: pointer;
-display: inline-block;
-position: relative;
-transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
 .bottonehome span:after {
-content: '\00bb';
-position: absolute;
-opacity: 0;
-top: 0;
-right: -20px;
-transition: 0.5s;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
 
 .bottonehome:hover span {
-padding-right: 25px;
+  padding-right: 25px;
 }
 
 .bottonehome:hover span:after {
-opacity: 1;
-right: 0;
+  opacity: 1;
+  right: 0;
 }
 
 
 
 .bottone{
-/*background: linear-gradient(to right, #f86c5a, #ff0000);*/
-background:#8c672e;
-font-size: 1.3vw;
-padding-top:0.4vw;
-padding-bottom:0.4vw;
-padding-right:1vw;
-padding-left:1vw;
-margin-bottom:1vw;
-font-family: 'BenchNine', sans-serif;
-color:white;
-border: 1px solid #c9c5ae;
-border-radius: 8px;
-transition-duration: 0.4s;
-cursor: pointer;
+  /*background: linear-gradient(to right, #f86c5a, #ff0000);*/
+  background:#8c672e;
+  font-size: 1.3vw;
+  padding-top:0.4vw;
+  padding-bottom:0.4vw;
+  padding-right:1vw;
+  padding-left:1vw;
+  margin-bottom:1vw;
+  font-family: 'BenchNine', sans-serif;
+  color:white;
+  border: 1px solid #c9c5ae;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 
 
 .bottone span {
-cursor: pointer;
-display: inline-block;
-position: relative;
-transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
 .bottone span:after {
-content: '\00bb';
-position: absolute;
-opacity: 0;
-top: 0;
-right: -20px;
-transition: 0.5s;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
 
 .bottone:hover span {
-padding-right: 25px;
+  padding-right: 25px;
 }
 
 .bottone:hover span:after {
-opacity: 1;
-right: 0;
+  opacity: 1;
+  right: 0;
 }
 
 #firstfoto {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
 #logo{
-  width: 6vw;
-  height: 6vw;
-  display: inline;
-  border: 0px solid black;
-  position: relative;
-  animation-name: titolo;
-  animation-duration: 4s;
+    width: 6vw;
+    height: 6vw;
+    display: inline;
+    border: 0px solid black;
+    position: relative;
+    animation-name: titolo;
+    animation-duration: 4s;
 
 }
 
 #firstfoto{
-width: 80vw;
-height: auto;
+  width: 80vw;
+  height: auto;
 
-display: flex;
-justify-content: center;
-align-content: center;
-margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
 }
 
 /* Stili per la navbar */
 .navbar {
-width: 80vw;
-border-radius: 0;
-padding-top: 1vw;
-padding-bottom: 1vw;
-display: flex;
-justify-content: center;
-align-content: center;
-margin: auto;
-background: #8c672e;
-font-family: 'BenchNine', sans-serif;
+  width: 80vw;
+  border-radius: 0;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  background: #8c672e;
+  font-family: 'BenchNine', sans-serif;
 }
 
 /* Stili per il menu principale */
 .navbar ul {
-list-style: none;
-display: flex;
-justify-content: space-around;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Stili per le voci del menu principale */
 .navbar li > a {
-color: white; /* Colore giallo per le voci del menu principale */
-font-size: 1.3vw;
-padding: 0 0.7vw;
-transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
+  color: white; /* Colore giallo per le voci del menu principale */
+  font-size: 1.3vw;
+  padding: 0 0.7vw;
+  transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
 }
 
 /* Cambio di colore al passaggio del mouse per le voci del menu principale */
 .navbar li > a:hover {
-color:white; /* Colore celestina al passaggio del mouse per le voci del menu principale */
+ color:white; /* Colore celestina al passaggio del mouse per le voci del menu principale */
 }
 
 
 /* Stili per il menu a tendina */
 .dropdown {
-position: relative;
-display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-display: none;
-position: absolute;
-background-color: #001d4a;
-white-space: nowrap;
-z-index: 1;
-border-radius: 0.3255vw;
+  display: none;
+  position: absolute;
+  background-color: #001d4a;
+  white-space: nowrap;
+  z-index: 1;
+  border-radius: 0.3255vw;
 }
 
 .dropdown-content a {
-color: #e6f28d;
-padding: 0.7vw 1vw;
-text-decoration: none;
-display: block;
+  color: #e6f28d;
+  padding: 0.7vw 1vw;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown-content a:hover {
-color: #fff;
+  color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
-display: block;
+  display: block;
 }
 
 #nav_icon{
-  width: 0.1vw;
-  height: 0.1vw;
+    width: 0.1vw;
+    height: 0.1vw;
 }
 
 #first{
-  width: 80vw;
-border-radius: 0;
-      position: relative;
-
-display: flex;
-justify-content: center;
-align-content: center;
-margin: auto;
+    width: 80vw;
+  border-radius: 0;
+        position: relative;
+ 
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
 }
 
 #sez_principale {
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin:auto;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
 }
 
 #sez_home{
- width: 80vw;
- height:40vw;
-  display: flex;
- 
-  justify-content: center;
-  align-items: center;
- /*  background: linear-gradient(to right,   #e6c47a,white);*/
-  background: #e6c47a;
+   width: 80vw;
+   height:40vw;
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+   /*  background: linear-gradient(to right,   #e6c47a,white);*/
+    background: #e6c47a;
 
 }
 
 .sez_catalogo {
- width: 80vw;
- margin: auto;
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
+   width: 80vw;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
 }
 
 articoli{
-  background:#e6c47a;
-  justify-content: center;
-  text-align: center;
-  border-radius:  1.3vw;
-  
-  padding: 1vw 1vw 1vw 1vw; 
-  margin-bottom:1vw;
-  margin-top:1vw;
+    background:#e6c47a;
+    justify-content: center;
+    text-align: center;
+    border-radius:  1.3vw;
+    
+    padding: 1vw 1vw 1vw 1vw; 
+    margin-bottom:1vw;
+    margin-top:1vw;
 }
 
 
 
 .elemento {
-text-align: center; /* Allinea il testo al centro */
-display: block; /* Imposta gli elementi su righe separate */
-margin-bottom: 10px; /* Aggiunge spazio tra le righe */
+ text-align: center; /* Allinea il testo al centro */
+  display: block; /* Imposta gli elementi su righe separate */
+  margin-bottom: 10px; /* Aggiunge spazio tra le righe */
 
 }
 
 
 
 .contenitore-immagini {
-width: 80vw; /* Larghezza del contenitore al 80% della viewport */
-display: flex; /* Utilizza il layout flessibile per posizionare le immagini su una riga */
+  width: 80vw; /* Larghezza del contenitore al 80% della viewport */
+  display: flex; /* Utilizza il layout flessibile per posizionare le immagini su una riga */
 
-align-items: center; /* Allinea verticalmente al centro */
-margin: 0;
+  align-items: center; /* Allinea verticalmente al centro */
+  margin: 0;
 }
 
 .immagine {
-width: 30%; /* Ogni immagine occupa il 20% della larghezza del contenitore */
-text-align: center; /* Centra il testo sotto l'immagine */
-align-items: center;
-  margin: 0;
-  
+  width: 30%; /* Ogni immagine occupa il 20% della larghezza del contenitore */
+  text-align: center; /* Centra il testo sotto l'immagine */
+  align-items: center;
+    margin: 0;
+    
 }
 
 
 /* immagini che scorrono*/
 .mySlides {
-display: inline-block;
-width: 25%;
-box-sizing: border-box;
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
 }
 
 .slideshow-image {
-width: 100%;
-height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .slideshow-container {
-width: 80vw;
-position: relative;
-margin: auto;
-white-space: nowrap;
-overflow: hidden;
+  width: 80vw;
+  position: relative;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
 background: #e6c47a;
 }
 
 .slideshow-container .mySlides {
-width: calc(100% / 4);
+  width: calc(100% / 4);
 }
 
 
 .prev, .next {
-position: absolute;
-top: 50%;
-width: auto;
-padding: 16px;
-margin-top: -22px;
-font-size: 20px;
-cursor: pointer;
-color: white;
-background-color: black;
-border: none;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: none;
 }
 
 .prev:hover, .next:hover {
-background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 
 
-table {
-    width: 80%;
-    max-width: 80vw;
-    margin: auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin-bottom:2vw;
-  }
+ table {
+      width: 80%;
+      max-width: 80vw;
+      margin: auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      margin-bottom:2vw;
+    }
 
-  th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
 
-  th {
-    background-color: #b3894f;
-    color: #fff;
-    font-weight: bold;
-  }
+    th {
+      background-color: #b3894f;
+      color: #fff;
+      font-weight: bold;
+    }
 
-  tr:hover {
-    background-color: #f5f5f5;
-  }
-  /* Imposta la larghezza delle colonne desiderate */
-  .first-column {
-    width: 30%;
-  }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    /* Imposta la larghezza delle colonne desiderate */
+    .first-column {
+      width: 30%;
+    }
 
-  .second-column {
-    width: 70%;
-  }
+    .second-column {
+      width: 70%;
+    }
 
 #orderForm {
-    width: 80vw;
-  border: 5px solid #b3894f;
-  border-radius: 8px;
-  background: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: auto;
-  padding: 20px;
+      width: 80vw;
+    border: 5px solid #b3894f;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: auto;
+    padding: 20px;
 }
 
 .product-input {
-  flex: 1;
+    flex: 1;
 }
 
 label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  align-self: start; /* Allinea l'etichetta in alto nella colonna */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    align-self: start; /* Allinea l'etichetta in alto nella colonna */
 }
 
 input {
-  border: 2px solid #b3894f;
-  padding: 10px;
-  border-radius: 5px;
-  flex: 1;
-  box-sizing: border-box;
+    border: 2px solid #b3894f;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+    box-sizing: border-box;
 }
 
 input:focus {
-  border-color: #e6c47a;
-  outline: none;
+    border-color: #e6c47a;
+    outline: none;
 }
 
 input:invalid {
-  border-color: #ff0000;
+    border-color: #ff0000;
 }
 
 #successMessage {
-  color: #4CAF50;
-  border: 1px solid #4CAF50;
-  padding: 15px;
-  margin-top: 15px;
-  display: none;
-  margin-bottom: 15px;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 15px;
+    margin-top: 15px;
+    display: none;
+    margin-bottom: 15px;
 }
 
 
@@ -475,131 +476,131 @@ input:invalid {
 
 
 footer{
- 
-  width: 80vw;
-  padding-top: 20px;
-  border-radius: 10px 10px 10px 10px;
-  margin: auto;
-  background:#8c672e;
-  font-family: 'BenchNine', sans-serif;
-
+   
+    width: 80vw;
+    padding-top: 20px;
+    border-radius: 10px 10px 10px 10px;
+    margin: auto;
+    background:#8c672e;
+    font-family: 'BenchNine', sans-serif;
+  
 }
 
 .footer li > a {
-justify-content: center;
-align-items: center;
-padding-left: 8vw;
-padding-right: 8vw;
-color: white; /* Colore bianco per le voci del menu principale */
-font-size: 1.3vw;
-padding: 0 0.7vw;
-transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
+  justify-content: center;
+  align-items: center;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  color: white; /* Colore bianco per le voci del menu principale */
+  font-size: 1.3vw;
+  padding: 0 0.7vw;
+  transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
 }
 
 
 #footer_sez{
- 
-  padding-bottom: 1vw;
-  color: white;
-  font-size: 1.3vw;
-  justify-content: center;
-  align-items: center;
-text-align: center; /* Allinea il testo al centro */
-  
+   
+    padding-bottom: 1vw;
+    color: white;
+    font-size: 1.3vw;
+    justify-content: center;
+    align-items: center;
+  text-align: center; /* Allinea il testo al centro */
+    
 }
 
 .footer{
-  justify-content: center;
-  align-items: center;
-   display: flex;
-  flex-wrap: wrap;
- 
+    justify-content: center;
+    align-items: center;
+     display: flex;
+    flex-wrap: wrap;
+   
 }
 .footer li > a {
-color: white; /* Colore giallo per le voci del menu principale */
-font-size: 1.3vw;
-padding: 0 0.7vw;
-transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
+  color: white; /* Colore giallo per le voci del menu principale */
+  font-size: 1.3vw;
+  padding: 0 0.7vw;
+  transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
 }
 /*
 .cookie-popup{
-   width: 80vw;
-  padding-top: 20px;
-  border-radius: 10px 10px 10px 10px;
-  margin: auto;
-  background: yellow;
-  font-family: 'BenchNine', sans-serif;
-   justify-content: center;
-  align-items: center;
-   display: flex;
-  flex-wrap: wrap;
+     width: 80vw;
+    padding-top: 20px;
+    border-radius: 10px 10px 10px 10px;
+    margin: auto;
+    background: yellow;
+    font-family: 'BenchNine', sans-serif;
+     justify-content: center;
+    align-items: center;
+     display: flex;
+    flex-wrap: wrap;
 }
 
 #cookie-popup{
-  
+    
 }*/
 
-.popup {
-        display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
+ .popup {
+          display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
 
 
 .cookie-popup {
-  width: 80vw;
-  padding: 20px;
-  border-radius: 10px;
-  margin: auto;
-  background: yellow;
-  font-family: 'BenchNine', sans-serif;
-  justify-content: center;
-  align-items: center;
-  display: none; /* Inizialmente nascosto */
-  position: fixed; /* Posizionamento fisso rispetto alla finestra */
-  top: 50%; /* Posizionamento al centro verticale */
-  left: 50%; /* Posizionamento al centro orizzontale */
-  transform: translate(-50%, -50%); /* Centratura del popup */
-  z-index: 9999; /* Assicura che sia in primo piano */
+    width: 80vw;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    background: yellow;
+    font-family: 'BenchNine', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Inizialmente nascosto */
+    position: fixed; /* Posizionamento fisso rispetto alla finestra */
+    top: 50%; /* Posizionamento al centro verticale */
+    left: 50%; /* Posizionamento al centro orizzontale */
+    transform: translate(-50%, -50%); /* Centratura del popup */
+    z-index: 9999; /* Assicura che sia in primo piano */
 }
 
 /* Aggiungi stili per il testo, i pulsanti, ecc., all'interno del popup */
 
 /* Stile per il link 'Accetta' */
 .cookie-popup button.accept-btn {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 /* Stile per il link 'Maggiori informazioni' */
 .cookie-popup a.more-info {
-  color: blue;
-  text-decoration: underline;
-  margin-top: 10px;
-  display: block;
+    color: blue;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: block;
 }
 
 /* Stile per il messaggio sui cookie */
 .cookie-popup p {
-  /* Aggiungi stili di formattazione del testo */
+    /* Aggiungi stili di formattazione del testo */
 }
 
 /* Mostra il popup quando è attivo */
 .cookie-popup.active {
-  display: flex;
+    display: flex;
 }
 
 
@@ -607,12 +608,12 @@ transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del 
 
 
 .immagini{
-  width:auto;
+    width:auto;
 display:flex;
 justify-content:center;
 text-align:center;
 margin:auto;
-  
+    
 }
 
 .imgcatalogo{
@@ -625,188 +626,188 @@ margin:auto;
 }
 
 a{
- text-decoration: none;
+   text-decoration: none;
 }
 
 a :hover{
-  text-decoration: underline;
+    text-decoration: underline;
 
 }
 
 .arich{
-   color:#b3894f;
+     color:#b3894f;
 }
 
 li {
 
-  list-style-type: none;
-
+    list-style-type: none;
+  
 }
 
 
 li a:hover:not(.active) {
-    background-image: linear-gradient(135deg, #c9c5ae 40%, #c9c5ae);
-    border-radius: 25px;
+      background-image: linear-gradient(135deg, #c9c5ae 40%, #c9c5ae);
+      border-radius: 25px;
 }
 
 .active {
-background-image: linear-gradient(135deg, #c9c5ae 40%, #c9c5ae);
-    border-radius: 25px;
-   
+  background-image: linear-gradient(135deg, #c9c5ae 40%, #c9c5ae);
+      border-radius: 25px;
+     
 }
 
 h2{
-  font-size: 2vw;
-  font-family: 'BenchNine', sans-serif; 
-
-  font-weight: 800;
+    font-size: 2vw;
+    font-family: 'BenchNine', sans-serif; 
   
+    font-weight: 800;
+    
 }
 
 h3{
-  font-size: 1.3vw;
-  padding-right: 0.5vw;
-  color:#363c45;
-  font-family: 'BenchNine', sans-serif;
- 
+    font-size: 1.3vw;
+    padding-right: 0.5vw;
+    color:#363c45;
+    font-family: 'BenchNine', sans-serif;
+   
 }
 
 p{
-  font-size: 1vw;
- 
-  color: black;
+    font-size: 1vw;
+   
+    color: black;
 }
 .persrichiesta{
-  font-size: 1vw;
-  color: black;
+    font-size: 1vw;
+    color: black;
 }
 
-form {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 400px;
-  }
-  label, input, textarea {
-    display: block;
-    margin-bottom: 10px;
-  }
-  input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+ form {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+    label, input, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
 
-  /* Stili CSS per il popup */
-  .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    z-index: 9999;
-  }
+    /* Stili CSS per il popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      z-index: 9999;
+    }
 
 
 
 
 .container {
-display: flex;
-align-items: center;
-overflow: hidden; /* Nasconde il resto dell'immagine che esce dal container */
-width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Nasconde il resto dell'immagine che esce dal container */
+  width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
 }
 .containercat {
-display: flex;
-align-items: center;
-overflow: hidden; /* Nasconde il resto dell'immagine che esce dal container */
-width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Nasconde il resto dell'immagine che esce dal container */
+  width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
 }
 .containerhome {
-
-display: flex;
-align-items: center;
-justify-content: center; /* Centra il contenuto verticalmente */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto verticalmente */
 
 /*  overflow: hidden;  Nasconde il resto dell'immagine che esce dal container */
-width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
-height:auto;
-
-}
-.texthome {
-flex: 4; /* Occupa il 40% della larghezza del container (40% di 80vw) */
-margin-left:2vw;
-padding-left:2vw;
-margin-right:2vw;
-padding-right:2vw;
-color:white;
-position: relative;
+  width: 80vw; /* Imposta la larghezza del container al 80% della larghezza della finestra */
+  height:auto;
   
 }
+.texthome {
+  flex: 4; /* Occupa il 40% della larghezza del container (40% di 80vw) */
+  margin-left:2vw;
+  padding-left:2vw;
+ margin-right:2vw;
+ padding-right:2vw;
+  color:white;
+position: relative;
+    
+  }
 .imagehome {
-flex: 6; /* Occupa il 40% della larghezza del container (40% di 80vw) */
-width:auto;
+  flex: 6; /* Occupa il 40% della larghezza del container (40% di 80vw) */
+  width:auto;
 
-border-radius: 10vw;
-position: relative; /* Imposta il contenitore dell'immagine come contenitore di riferimento per il posizionamento assoluto degli elementi interni */
-
+  border-radius: 10vw;
+  position: relative; /* Imposta il contenitore dell'immagine come contenitore di riferimento per il posizionamento assoluto degli elementi interni */
+  
 }
 .video-overlay {
-position: absolute; /* Posiziona il video assolutamente rispetto al suo contenitore .imagehome */
-top: 35%; /* Centra il video verticalmente */
-left: 50%; /* Centra il video orizzontalmente */
-transform: translate(-50%, -50%); /* Sposta il video indietro di metà della sua altezza e larghezza per centrarlo perfettamente */
-/* Assicurati che le dimensioni del video siano appropriate */
-
-width: 90%; /* o la dimensione che preferisci */
-height: auto; /* mantiene l'aspetto del video basato sulla larghezza */
-border-radius: 2vw; /* Se desideri bordi arrotondati sul video, simili all'immagine */
-/* Aggiungi qualsiasi altro stile come ombre, bordi, ecc., se necessario */
- 
-  margin:auto;
+ position: absolute; /* Posiziona il video assolutamente rispetto al suo contenitore .imagehome */
+  top: 35%; /* Centra il video verticalmente */
+ left: 50%; /* Centra il video orizzontalmente */
+  transform: translate(-50%, -50%); /* Sposta il video indietro di metà della sua altezza e larghezza per centrarlo perfettamente */
+  /* Assicurati che le dimensioni del video siano appropriate */
+  
+  width: 90%; /* o la dimensione che preferisci */
+  height: auto; /* mantiene l'aspetto del video basato sulla larghezza */
+  border-radius: 2vw; /* Se desideri bordi arrotondati sul video, simili all'immagine */
+  /* Aggiungi qualsiasi altro stile come ombre, bordi, ecc., se necessario */
+   
+    margin:auto;
 
 }
 
 
 .text {
-flex: 4; /* Occupa il 40% della larghezza del container (40% di 80vw) */
-padding: 20px; /* Opzionale: Aggiunge un po' di spazio intorno al testo */
-
+  flex: 4; /* Occupa il 40% della larghezza del container (40% di 80vw) */
+  padding: 20px; /* Opzionale: Aggiunge un po' di spazio intorno al testo */
+  
 }
 
 .image {
-flex: 3; /* Occupa il 40% della larghezza del container (40% di 80vw) */
-padding-top:1vw;
-overflow: hidden;
-position: relative;
-border-radius: 1vw;
-margin-bottom:1vw;
+  flex: 3; /* Occupa il 40% della larghezza del container (40% di 80vw) */
+  padding-top:1vw;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1vw;
+  margin-bottom:1vw;
 }
 
 .scroll-image {
-width: 100%;
-height: auto;
-animation: scrollImage 10s forwards; /* Utilizzo "forwards" per far terminare l'animazione alla fine */
+  width: 100%;
+  height: auto;
+  animation: scrollImage 10s forwards; /* Utilizzo "forwards" per far terminare l'animazione alla fine */
 }
 
 @keyframes scrollImage {
-0% {
-  transform: translateX(-100%); /* Parte dall'estrema sinistra del container */
-}
-100% {
-  transform: translateX(1%); /* Termina all'estrema destra del container */
-}
+  0% {
+    transform: translateX(-100%); /* Parte dall'estrema sinistra del container */
+  }
+  100% {
+    transform: translateX(1%); /* Termina all'estrema destra del container */
+  }
 }
 
 
@@ -816,26 +817,26 @@ animation: scrollImage 10s forwards; /* Utilizzo "forwards" per far terminare l'
 
 
 .typewriter {
-max-width:80vw;
-margin: 0 auto;
-padding: 20px;
+  max-width:80vw;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .text-container {
-display: inline-block; /* Per adattarsi alla larghezza del testo */
-text-align: left; /* Per mantenere il testo allineato a sinistra */
+  display: inline-block; /* Per adattarsi alla larghezza del testo */
+  text-align: left; /* Per mantenere il testo allineato a sinistra */
 }
 
 .text-container nobr {
-white-space: nowrap; /* Evita la divisione delle parole */
+  white-space: nowrap; /* Evita la divisione delle parole */
 }
 
 
 
 
 @keyframes titolo {
-0%   {left:-600px; top:0px;}
-25%  {left:0px; top:0px;}
+  0%   {left:-600px; top:0px;}
+  25%  {left:0px; top:0px;}
 }
 
 
@@ -844,361 +845,361 @@ white-space: nowrap; /* Evita la divisione delle parole */
 @media screen and (max-width: 992px) {
 
 
- body {
-background-color: white;
+   body {
+  background-color: white;
 }
 
 
 .blog_title {
-width: 100%;
-height: auto;
+  width: 100%;
+  height: auto;
 
-border-radius: 0;
-text-align: center;
-font-size: 4.5vw;
+  border-radius: 0;
+  text-align: center;
+  font-size: 4.5vw;
 
 }
 
 #logo {
-width: 18vw;
-height: 18vw;
-border: 0;
+  width: 18vw;
+  height: 18vw;
+  border: 0;
 }
 
 #firstfoto {
-width: 100%;
-height: auto;
-display: flex;
-justify-content: center;
-align-content: center;
-
-}
-
-#testoSpeciale {
- font-family: 'BenchNine', sans-serif;
-font-size:4vw;
- text-align: center; /* Allinea il testo al centro */
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
-}
-#testoSpeciale1 {
-font-family: 'BenchNine', sans-serif;
-font-size:3vw;
- text-align: center; /* Allinea il testo al centro */
- margin: 0;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
-}
-#testocatalogo {
-font-family: 'BenchNine', sans-serif;
-font-size:4vw;
-/* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
-}
-.navbar {
-  width:100% ;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-content: center;
+ 
+}
 
-  padding: 2vw 0; /* Imposta un padding uniforme in alto e in basso */
-
+#testoSpeciale {
+   font-family: 'BenchNine', sans-serif;
+  font-size:4vw;
+   text-align: center; /* Allinea il testo al centro */
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+}
+#testoSpeciale1 {
   font-family: 'BenchNine', sans-serif;
+  font-size:3vw;
+   text-align: center; /* Allinea il testo al centro */
+   margin: 0;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+}
+#testocatalogo {
+  font-family: 'BenchNine', sans-serif;
+  font-size:4vw;
+  /* Altre regole di stile per l'elemento con id "testoSpeciale" qui */
+}
+  .navbar {
+    width:100% ;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+ 
+    padding: 2vw 0; /* Imposta un padding uniforme in alto e in basso */
+  
+    font-family: 'BenchNine', sans-serif;
+     
+  
+ 
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
    
+    margin:0;
+    padding: 0;
+  }
+  .navbar li {
+    margin: 0;
+    font-size: 2vw;
+  }
+  .navbar a.active {
+    font-size: 1.3vw;
+  }
+  .navbar li > a {
+    
+    font-size: 3vw;
+     padding: 1vw 2vw; 
+    transition: color 0.3s;
+  }
+  .navbar li > a:hover {
+    color: white;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #001d4a;
+   
+    z-index: 1;
+    border-radius: 0.3255vw;
+    overflow: auto;
+    
+  }
+  .dropdown-content a {
+    color: #e6f28d;
 
-
-}
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
- 
-  margin:0;
-  padding: 0;
-}
-.navbar li {
-  margin: 0;
-  font-size: 2vw;
-}
-.navbar a.active {
-  font-size: 1.3vw;
-}
-.navbar li > a {
-  
-  font-size: 3vw;
-   padding: 1vw 2vw; 
-  transition: color 0.3s;
-}
-.navbar li > a:hover {
-  color: white;
-}
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #001d4a;
- 
-  z-index: 1;
-  border-radius: 0.3255vw;
-  overflow: auto;
-  
-}
-.dropdown-content a {
-  color: #e6f28d;
-
-  padding-top:1vw;
-  padding-bottom:1vw;
-  padding-left:1vw;
-  padding-right:1vw;
-  text-decoration: none;
-  display: block;
-   white-space: nowrap;
-}
-.dropdown-content a:hover {
-  color: #fff;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-     max-height: 20vw; 
- 
-}
+    padding-top:1vw;
+    padding-bottom:1vw;
+    padding-left:1vw;
+    padding-right:1vw;
+    text-decoration: none;
+    display: block;
+     white-space: nowrap;
+  }
+  .dropdown-content a:hover {
+    color: #fff;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+       max-height: 20vw; 
+   
+  }
 #sez_principale{
-   width: 100%;
-   align-items: center;
+     width: 100%;
+     align-items: center;
 }
 
 .sez_catalogo {
- width:90vw;
-      display: flex;
-      flex-direction: column;
-      margin-bottom:2vw;
-      justify-content:center;
-      align-content: center;
+   width:90vw;
+        display: flex;
+        flex-direction: column;
+        margin-bottom:2vw;
+        justify-content:center;
+        align-content: center;
 
 }
 
 .slideshow-container {
-width: auto;
-margin:auto;
+  width: auto;
+  margin:auto;
 }
 
 .prev, .next {
-position: absolute;
-top: 50%;
-width: auto;
-padding: 10px; /* Riduci la spaziatura interna del bottone */
-margin-top: -20px; /* Regola la posizione verticale del bottone */
-font-size: 16px; /* Riduci la dimensione del testo del bottone */
-cursor: pointer;
-color: white;
-background-color: black;
-border: none;
+  position: absolute;
+  top: 50%;
+  width: auto;
+ padding: 10px; /* Riduci la spaziatura interna del bottone */
+  margin-top: -20px; /* Regola la posizione verticale del bottone */
+  font-size: 16px; /* Riduci la dimensione del testo del bottone */
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: none;
 }
-
+  
 
 
 
 articoli{
 
-   width: auto;
-  height: auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-bottom: 20px;
-  border-radius: 25px;
-  order: 5;
-  justify-content: center;
-  text-align: center;
+     width: auto;
+    height: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    order: 5;
+    justify-content: center;
+    text-align: center;
 
 }
 
 footer {
-width: auto;
-height: auto;
-font-size: 3vw;
-padding: 1vw;
-transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
-}
-#footer_sez {
-       font-size: 2vw;
-      text-align: center; /* Allinea il testo al centro */
-      display: block; /* Imposta il display a blocco per far sì che il testo cada sotto l'altro */
-  }
-
-.footer li > a{
-   font-size: 2vw;
-}
-#first{
   width: auto;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  
+  font-size: 3vw;
+  padding: 1vw;
+  transition: color 0.3s; /* Transizione per il cambio di colore al passaggio del mouse */
+}
+  #footer_sez {
+         font-size: 2vw;
+        text-align: center; /* Allinea il testo al centro */
+        display: block; /* Imposta il display a blocco per far sì che il testo cada sotto l'altro */
+    }
+
+.footer li > a{
+     font-size: 2vw;
+}
+#first{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
 }
 
 .elemento {
-width: auto;
-margin-bottom: 10px;
-align-items: center;
-text-align: center; /* Allinea il testo al centro */
+  width: auto;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center; /* Allinea il testo al centro */
 }
 
 .contenitore-immagini {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center; /* Centra verticalmente il contenuto */
-width: auto;
-margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente il contenuto */
+  width: auto;
+  margin: auto;
 }
 
-.immagine {
-  width: auto; /* Adattamento della larghezza delle immagini */
-  margin-bottom: 20px; /* Aggiungi spazio tra le immagini */
-  
-}
+  .immagine {
+    width: auto; /* Adattamento della larghezza delle immagini */
+    margin-bottom: 20px; /* Aggiungi spazio tra le immagini */
+    
+  }
 
 
 
 
 
 h1, h2, h3 {
-font-size: 5vw;
-padding-right: 1vw;
-padding-left: 1vw;
+  font-size: 5vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
 
 p {
-font-size: 3vw;
-padding-left: 1vw;
-padding-right: 1vw;
+  font-size: 3vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 
 }
 
 .persrichiesta{
-  font-size: 2vw;
-  color: black;
+    font-size: 2vw;
+    color: black;
 }
 
 h4 {
-font-size: 3vw;
+  font-size: 3vw;
 }
 
 
 
 .immagini
-  {justify-content:center;text-align:center;margin:auto; width: 100%; /* Dimensione per dispositivi mobili */
-  height: auto;}
-  
-  
-   .image {
-  flex: 100%; /* Occupa l'intera larghezza del container su dispositivi mobili */
-  border-radius: 5px; /* Adatta il raggio del bordo per dispositivi mobili */
-  margin-bottom: 10px; /* Modifica il margine inferiore per dispositivi mobili */
-}
-
-.typewriter {
-  max-width: 90%; /* Riduci la larghezza del contenitore per adattarsi allo schermo */
-  padding: 10px; /* Riduci il padding per sfruttare meglio lo spazio */
-}
-
-
-#orderForm {
-   width:auto;
-   /* Riduci il padding per dispositivi mobili */
-flex-direction: column; /* Imposta il layout a colonna per una migliore visualizzazione su schermi stretti */
-      align-items: center; /* Centra gli elementi all'interno del form */
-      padding-left:7vw;
-      padding-right:7vw;
+    {justify-content:center;text-align:center;margin:auto; width: 100%; /* Dimensione per dispositivi mobili */
+    height: auto;}
+    
+    
+     .image {
+    flex: 100%; /* Occupa l'intera larghezza del container su dispositivi mobili */
+    border-radius: 5px; /* Adatta il raggio del bordo per dispositivi mobili */
+    margin-bottom: 10px; /* Modifica il margine inferiore per dispositivi mobili */
   }
 
-  input {
-      margin-top: 3px; /* Riduci lo spazio tra l'etichetta e l'input per dispositivi mobili */
+ .typewriter {
+    max-width: 90%; /* Riduci la larghezza del contenitore per adattarsi allo schermo */
+    padding: 10px; /* Riduci il padding per sfruttare meglio lo spazio */
   }
 
 
+ #orderForm {
+     width:auto;
+     /* Riduci il padding per dispositivi mobili */
+ flex-direction: column; /* Imposta il layout a colonna per una migliore visualizzazione su schermi stretti */
+        align-items: center; /* Centra gli elementi all'interno del form */
+        padding-left:7vw;
+        padding-right:7vw;
+    }
 
-.text-container span {
-  font-size: 16px; /* Diminuisci la dimensione del testo per la leggibilità su schermi più piccoli */
-}
+    input {
+        margin-top: 3px; /* Riduci lo spazio tra l'etichetta e l'input per dispositivi mobili */
+    }
 
-   .first-column {
-    width: 60%;
+
+
+  .text-container span {
+    font-size: 16px; /* Diminuisci la dimensione del testo per la leggibilità su schermi più piccoli */
   }
+  
+     .first-column {
+      width: 60%;
+    }
 
-  .second-column {
-    width: 40%;
-  }
-  
-  
-  .containercat {
-flex-direction: column;
+    .second-column {
+      width: 40%;
+    }
+    
+    
+    .containercat {
+  flex-direction: column;
 }
-  
+    
 .image {
-flex: 3; /* Occupa il 40% della larghezza del container (40% di 80vw) */
-overflow: hidden;
-position: relative;
-border-radius: 1vw;
-margin-bottom:1vw;
-width:auto;
+  flex: 3; /* Occupa il 40% della larghezza del container (40% di 80vw) */
+  overflow: hidden;
+  position: relative;
+  border-radius: 1vw;
+  margin-bottom:1vw;
+  width:auto;
 }
 
 .bottonehome {
-  font-size:3.5vw;
+    font-size:3.5vw;
 padding-top: 10px; /* Imposta il padding superiore per dispositivi mobili */
-  padding-bottom: 10px; /* Imposta il padding inferiore per dispositivi mobili */
-  padding-right: 20px; /* Imposta il padding destro per dispositivi mobili */
-  padding-left: 20px; /* Imposta il padding sinistro per dispositivi mobili */
-}
-.bottone {
-  font-size: 3.5vw; /* Imposta la dimensione del font per dispositivi mobili */
-  padding-top: 10px; /* Imposta il padding superiore per dispositivi mobili */
-  padding-bottom: 10px; /* Imposta il padding inferiore per dispositivi mobili */
-  padding-right: 20px; /* Imposta il padding destro per dispositivi mobili */
-  padding-left: 20px; /* Imposta il padding sinistro per dispositivi mobili */
-}
+    padding-bottom: 10px; /* Imposta il padding inferiore per dispositivi mobili */
+    padding-right: 20px; /* Imposta il padding destro per dispositivi mobili */
+    padding-left: 20px; /* Imposta il padding sinistro per dispositivi mobili */
+  }
+ .bottone {
+    font-size: 3.5vw; /* Imposta la dimensione del font per dispositivi mobili */
+    padding-top: 10px; /* Imposta il padding superiore per dispositivi mobili */
+    padding-bottom: 10px; /* Imposta il padding inferiore per dispositivi mobili */
+    padding-right: 20px; /* Imposta il padding destro per dispositivi mobili */
+    padding-left: 20px; /* Imposta il padding sinistro per dispositivi mobili */
+  }
+  
 
+  .containerhome {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra il contenuto orizzontalmente */
+    justify-content: center; /* Centra il contenuto verticalmente */
+    width: 100%;
+  }
 
-.containerhome {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra il contenuto orizzontalmente */
-  justify-content: center; /* Centra il contenuto verticalmente */
-  width: 100%;
-}
+  .imagehome {
+    width: 100%; /* Assicurati che occupi l'intera larghezza */
+    display: flex;
+    justify-content: center; /* Centra il contenuto all'interno del container dell'immagine */
+    align-items: center; /* Centra verticalmente se necessario */
+  }
 
-.imagehome {
-  width: 100%; /* Assicurati che occupi l'intera larghezza */
-  display: flex;
-  justify-content: center; /* Centra il contenuto all'interno del container dell'immagine */
-  align-items: center; /* Centra verticalmente se necessario */
-}
-
-.video-overlay {
-  position: relative;
-  width: 90%; /* o la dimensione che preferisci, ma assicurati che sia centrata */
-  margin: 0 auto; /* Centra il video all'interno del suo contenitore */
-  top: 0;
-  left: 0;
-  transform: none;
-  border-radius: 2vw;
-  margin-bottom:2vw;
-}
+  .video-overlay {
+    position: relative;
+    width: 90%; /* o la dimensione che preferisci, ma assicurati che sia centrata */
+    margin: 0 auto; /* Centra il video all'interno del suo contenitore */
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 2vw;
+    margin-bottom:2vw;
+  }
 
 #sez_home{
- width: 100%;
- height:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-   margin:auto;
- /*  background: linear-gradient(to right,   #e6c47a,white);*/
-  background: #e6c47a;
+   width: 100%;
+   height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin:auto;
+   /*  background: linear-gradient(to right,   #e6c47a,white);*/
+    background: #e6c47a;
 
 }
 

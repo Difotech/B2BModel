@@ -6,9 +6,9 @@
                  <div class="containerhome">
                     
                           <div class="texthome">
-                                <h2><b>MURGIAPIZZA</b> - Vendita di <strong>basi pizza per locali commerciali</strong>
+                                <h2><b>ORO DI PUGLIA B2B</b> - Vendita di <strong>prodotti pugliesi per locali commerciali</strong>
                                 </h2>
-                                <h2><strong>BASI PER PIZZA</strong>, PUCCE E FOCACCE PRODOTTE IN <strong>ITALIA</strong></h2>
+                                <h2><strong>Taralli</strong>, orecchiette, olio, vino e tanto altro con l'essenza della <strong>PUGLIA</strong></h2>
                                 
                                  <a href="https://www.murgiapizza.com/sezioni/catalogo.html"><center> <button class="bottone"><span>VAI AL CATALOGO</span></button></center></a>
                           </div>
