@@ -55,7 +55,7 @@
   <div class="from-field"></div>
   <input type="submit" value="login">
   
-git</nav>
+</nav>
 
  
    
