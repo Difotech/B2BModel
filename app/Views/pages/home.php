@@ -1,0 +1,1 @@
+ <h1> questa è la home della nostra applicazione statica</h1>
