@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="it">
         <head>
-          <title>Murgiapizza - Vendita di basi pizza all'ingrosso</title>
+          <title>Prodotti tipici pugliesi nel mondo</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,10 +36,10 @@
         <body>
             
             
-             <h1 hidden>Murgiapizza - Vendita di basi pizza all'ingrosso</h1>
+             <h1 hidden>Prodotti tipici pugliesi nel mondo</h1>
     
   <div class="blog_title">
-    <h2>Le basi pizza e prodotti ideali per la tua attività</h2>
+    <h2>Prodotti tipici pugliesi nel mondo</h2>
         <img id="logo" src="<?= base_url('public/img/avatar.webp'); ?>" alt="murgiapizza">
   </div>
 
