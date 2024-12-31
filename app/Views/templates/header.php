@@ -6,7 +6,6 @@
        --<h1><?= esc($title) ?></h1>-$_COOKIE->
 
 -->
-
 <!DOCTYPE html>
 <html lang="it">
         <head>
@@ -27,16 +26,14 @@
   <link rel="stylesheet" href="<?= base_url('public/style.css'); ?>" type="text/css">
   <link  rel = "apple-touch-icon"  href="./immagini/favicon.webp" >
   <link rel="icon" href="<?= base_url('public/img/favicon.webp'); ?>">
-  
- 
-   
-        </head>
+
+</head>
         
         
-        <body>
+<body>
             
             
-             <h1 hidden>Prodotti tipici pugliesi nel mondo</h1>
+ <h1 hidden>Prodotti tipici pugliesi nel mondo</h1>
     
   <div class="blog_title">
     <h2>Prodotti tipici pugliesi nel mondo</h2>
@@ -45,12 +42,12 @@
 
  <nav class="navbar">
   <ul>
-    <li><a href="">HOME</a></li>
-    <li><a href="./sezioni/chi-siamo.html">CHI SIAMO</a></li>
-    <li><a href="./sezioni/catalogo.html">CATALOGO</a></li>
-    <li><a href="./sezioni/fai-una-richiesta.html">FAI UNA RICHIESTA</a></li>
-    <li><a href="./sezioni/contattaci.html">CONTATTACI</a></li>
-    <li><a href="./sezioni/blog.html">BLOG</a></li>
+    <li><a href="<?= base_url('home'); ?>">HOME</a></li>
+    <li><a href="<?= base_url('chi-siamo'); ?>">CHI SIAMO</a></li>
+    <li><a href="<?= base_url('catalogo'); ?>">CATALOGO</a></li>
+    <li><a href="<?= base_url('faiunarichiesta'); ?>">FAI UNA RICHIESTA</a></li>
+    <li><a href="<?= base_url('contattaci'); ?>">CONTATTACI</a></li>
+    <li><a href="<?= base_url('blog'); ?>">BLOG</a></li>
   </ul>
  </nav>
 
