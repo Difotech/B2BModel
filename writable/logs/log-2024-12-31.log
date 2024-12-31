@@ -1,2 +1,63 @@
 INFO - 2024-12-31 10:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-31 10:47:07 --> CSRF token verified.
+ERROR - 2024-12-31 11:09:04 --> ErrorException: pg_query(): Query failed: ERRORE:  la relazione &quot;news&quot; non esiste
+LINE 1: SELECT * FROM news ORDER BY title;
+                      ^ in C:\xampp\htdocs\codeigniter\B2BModel\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 187)
+#1 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT * FROM n...')
+#2 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\BaseConnection.php(693): CodeIgniter\Database\Postgre\Connection->execute('SELECT * FROM n...')
+#3 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM n...')
+#4 C:\xampp\htdocs\codeigniter\B2BModel\system\Model.php(867): CodeIgniter\Database\BaseConnection->query('SELECT * FROM n...')
+#5 C:\xampp\htdocs\codeigniter\B2BModel\app\Models\NewsModel.php(21): CodeIgniter\Model->__call('query', Array)
+#6 C:\xampp\htdocs\codeigniter\B2BModel\app\Controllers\News.php(13): App\Models\NewsModel->getNews()
+#7 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(942): App\Controllers\News->index()
+#8 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\News))
+#9 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\B2BModel\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-12-31 11:09:04 --> pg_query(): Query failed: ERRORE:  la relazione &quot;news&quot; non esiste
+LINE 1: SELECT * FROM news ORDER BY title;
+                      ^
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Model.php(867): CodeIgniter\Database\BaseConnection->query('SELECT * FROM news ORDER BY title;')
+ 2 APPPATH\Models\NewsModel.php(21): CodeIgniter\Model->__call('query', [...])
+ 3 APPPATH\Controllers\News.php(13): App\Models\NewsModel->getNews()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\News->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\News))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-31 11:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-31 11:09:23 --> ErrorException: pg_query(): Query failed: ERRORE:  la relazione &quot;news&quot; non esiste
+LINE 1: SELECT * FROM news WHERE slug='n5';
+                      ^ in C:\xampp\htdocs\codeigniter\B2BModel\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 187)
+#1 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT * FROM n...')
+#2 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\BaseConnection.php(693): CodeIgniter\Database\Postgre\Connection->execute('SELECT * FROM n...')
+#3 C:\xampp\htdocs\codeigniter\B2BModel\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM n...')
+#4 C:\xampp\htdocs\codeigniter\B2BModel\system\Model.php(867): CodeIgniter\Database\BaseConnection->query('SELECT * FROM n...')
+#5 C:\xampp\htdocs\codeigniter\B2BModel\app\Models\NewsModel.php(25): CodeIgniter\Model->__call('query', Array)
+#6 C:\xampp\htdocs\codeigniter\B2BModel\app\Controllers\News.php(29): App\Models\NewsModel->getNews('n5')
+#7 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(942): App\Controllers\News->view('n5')
+#8 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\News))
+#9 C:\xampp\htdocs\codeigniter\B2BModel\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\B2BModel\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-12-31 11:09:23 --> pg_query(): Query failed: ERRORE:  la relazione &quot;news&quot; non esiste
+LINE 1: SELECT * FROM news WHERE slug='n5';
+                      ^
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Model.php(867): CodeIgniter\Database\BaseConnection->query('SELECT * FROM news WHERE slug=\'n5\';')
+ 2 APPPATH\Models\NewsModel.php(25): CodeIgniter\Model->__call('query', [...])
+ 3 APPPATH\Controllers\News.php(29): App\Models\NewsModel->getNews('n5')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\News->view('n5')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\News))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-31 11:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-31 11:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-31 11:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-31 11:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-31 11:17:06 --> CSRF token verified.
+INFO - 2024-12-31 11:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

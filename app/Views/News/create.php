@@ -1,3 +1,6 @@
+<head>
+</head>
+<body>
 <h2><?= esc($title) ?></h2>
 
 <?= session()->getFlashdata('error') ?>
@@ -20,3 +23,4 @@
     
      <input type="submit" name="submit" value="Create news item" />
 </form>
+</body>
