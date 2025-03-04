@@ -3,9 +3,7 @@
 namespace App\Controllers;
 
 class Home extends BaseController
-{
-    public function index(): string
-    {
-        return view('welcome_message');
-    }
+{public function index() {
+    return view('home');  // Carica la vista home.php da app/Views
+}
 }

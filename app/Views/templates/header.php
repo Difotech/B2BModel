@@ -28,8 +28,8 @@
   <link  rel = "apple-touch-icon"  href="./immagini/favicon.webp" >
   <link rel="icon" href="<?= base_url('public/img/favicon.webp'); ?>">
   
- 
-   
+
+  
         </head>
         
         
@@ -52,8 +52,9 @@
     <li><a href="./sezioni/contattaci.html">CONTATTACI</a></li>
     <li><a href="./sezioni/blog.html">BLOG</a></li>
   </ul>
-  <div class="from-field"></div>
-  <input type="submit" value="login">
+ 
+  <input type="button" value="Login" onclick="window.location.href='accesso';">
+
   
 </nav>
 
