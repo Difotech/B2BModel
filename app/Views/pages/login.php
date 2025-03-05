@@ -6,7 +6,7 @@
 
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" name="email" class="form-control" required>
+            <input type="email" name="email" value="" class="form-control" required>
         </div>
 
         <div class="form-group">
@@ -14,8 +14,9 @@
             <input type="password" name="password" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Accedi</button>
+        <button type="submit" class="btn btn-primary" button class="bottone">Accedi</button>
     </form>
 
-    <a href="<?= base_url('/registrati') ?>" class="registrati.php">Non sei registrato? Registrati</a>
+    <a href="<?= base_url('registrati') ?>">Non sei registrato? Registrati</a>
+
 </div>

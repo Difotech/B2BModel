@@ -42,22 +42,26 @@
     <h2>Le basi pizza e prodotti ideali per la tua attività</h2>
         <img id="logo" src="<?= base_url('public/img/avatar.webp'); ?>" alt="murgiapizza">
   </div>
-
- <nav class="navbar">
+ 
+  <nav class="navbar">
   <ul>
-    <li><a href="">HOME</a></li>
-    <li><a href="./sezioni/chi-siamo.html">CHI SIAMO</a></li>
-    <li><a href="./sezioni/catalogo.html">CATALOGO</a></li>
-    <li><a href="./sezioni/fai-una-richiesta.html">FAI UNA RICHIESTA</a></li>
-    <li><a href="./sezioni/contattaci.html">CONTATTACI</a></li>
-    <li><a href="./sezioni/blog.html">BLOG</a></li>
+    <li><a href="<?= base_url() ?>">HOME</a></li>
+    <li><a href="<?= base_url('chi-siamo') ?>">CHI SIAMO</a></li>
+    <li><a href="<?= base_url('catalogo') ?>">CATALOGO</a></li>
+    <li><a href="<?= base_url('faiunarichiesta') ?>">FAI UNA RICHIESTA</a></li>
+    <li><a href="<?= base_url('contattaci') ?>">CONTATTACI</a></li>
+    <li><a href="<?= base_url('blog') ?>">BLOG</a></li>
   </ul>
- 
-  <input type="button" value="Login" onclick="window.location.href='accesso';">
+  <div class="user-info">
+    <?php if (session()->get('isLoggedIn')): ?>
+      <span>
+            <a href="<?= base_url('area-personale') ?>">👤 <?= session()->get('nome') ?></a>
+        </span>
+   </div>  
+        <button onclick="window.location.href='<?= base_url('logout') ?>';">Logout</button>
+    <?php else: ?>
+        <button onclick="window.location.href='<?= base_url('login') ?>';">Login</button>
+    <?php endif; ?>
 
-  
+
 </nav>
-
- 
-   
-

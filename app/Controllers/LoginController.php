@@ -1,12 +1,15 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 
-class LoginController extends Controller {
-
-    public function login() {
+class LoginController extends Controller
+{
+    // Metodo per il login
+    public function login()
+    {
         helper(['form', 'url']);
         
         if ($this->request->getMethod() === 'post') {
@@ -15,36 +18,46 @@ class LoginController extends Controller {
                 'email'    => 'required|valid_email',
                 'password' => 'required',
             ])) {
-                // Passa la variabile di validazione alla vista in caso di errori
-                return view('pages/accesso', ['validation' => $this->validator]);
+                return view('accesso', ['validation' => $this->validator]);
             }
 
-            // Recupera l'utente dal database
             $userModel = new UserModel();
             $user = $userModel->where('email', $this->request->getPost('email'))->first();
 
             // Verifica credenziali
             if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-                // Imposta la sessione di login
-                session()->set('isLoggedIn', true);
-                session()->set('userId', $user['id']);
-                session()->set('userName', $user['nome']);
+                // Imposta la sessione con i dati dell'utente
+                $sessionData = [
+                    'isLoggedIn' => true,
+                    'nome'       => $user['nome'] // Supponendo che la colonna nel DB sia 'nome'
+                ];
+                session()->set($sessionData);
+
                 return redirect()->to('/area-personale');
             } else {
-                // Messaggio di errore per credenziali sbagliate
                 return redirect()->to('/login')->with('error', 'Credenziali errate!');
             }
         }
 
-        // Mostra la vista del login senza errori
-        return view('pages/accesso');
+        return view('accesso');
     }
 
-    // Logout: Rimuove la sessione e reindirizza alla pagina di login
     public function logout() {
         session()->remove('isLoggedIn');
         session()->remove('userId');
         session()->remove('userName');
         return redirect()->to('/login');
+    }
+    
+    // Metodo per la pagina dell'area personale
+    public function areaPersonale()
+    {
+        // Verifica se l'utente è loggato
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+
+        // Mostra la pagina dell'area personale con il nome utente
+        return view('area_personale', ['nome' => session()->get('nome')]);
     }
 }

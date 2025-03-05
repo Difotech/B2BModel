@@ -1,11 +1,30 @@
 <?php
 
+namespace Config;
+
 use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
  */
- 
+
+// Impostazioni predefinite delle rotte
+$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultController('Home');
+$routes->setDefaultMethod('index');
+$routes->setTranslateURIDashes(false);
+$routes->set404Override();
+$routes->setAutoRoute(true);
+
+$routes->get('/', 'Pages::view/home'); // Home page
+$routes->get('chi-siamo', 'Pages::view/chi-siamo');
+$routes->get('catalogo', 'Pages::view/catalogo');
+$routes->get('fai-una-richiesta', 'Pages::view/fai-una-richiesta');
+$routes->get('contattaci', 'Pages::view/contattaci');
+$routes->get('blog', 'Pages::view/blog');
+
+
+
 // Rotte per la gestione delle news
 $routes->match(['get', 'post'], 'news/create', 'News::create');
 $routes->get('/', 'Home::index');
@@ -16,17 +35,19 @@ $routes->get('news', 'News::index');
 $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 
-// ✅ ROTTA REGISTRAZIONE (corretta e senza duplicati)
+// ✅ Rotte per la registrazione
 $routes->get('register', 'RegisterController::index');  // Mostra il form di registrazione
-$routes->post('register', 'RegisterController::register'); // Elabora il form
+$routes->post('register', 'RegisterController::register'); // Elabora il form di registrazione
 
-// Rotta login
+// Rotte per il login
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login', 'LoginController::login');
+
 $routes->get('/logout', 'LoginController::logout');
 
-// ✅ ROTTA AREA PERSONALE (gestita da AreaPersonaleController)
-$routes->get('/area-personale', 'AreaPersonaleController::index', ['filter' => 'auth']);  // Assicurati che 'auth' sia un filtro di autenticazione configurato correttamente
+
+// Rotta per l'area personale (solo per utenti loggati)
+$routes->get('/area-personale', 'LoginController::areaPersonale', ['filter' => 'auth']);
 
 ?>
 

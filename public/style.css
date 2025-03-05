@@ -117,6 +117,7 @@ body{
 
 
 
+
 .bottone{
   /*background: linear-gradient(to right, #f86c5a, #ff0000);*/
   background:#8c672e;
@@ -223,6 +224,14 @@ body{
  color:white; /* Colore celestina al passaggio del mouse per le voci del menu principale */
 }
 
+.user-info {
+  display: flex;
+  align-items: center; /* Allinea verticalmente al centro */
+  gap: 10px; /* Spazio tra gli elementi */
+  padding-right:1vw;
+  color:white;
+}
+
 
 /* Stili per il menu a tendina */
 .dropdown {
@@ -291,16 +300,16 @@ input[type="email"], input[type="password"] {
   border-radius: 4px;
 }
 button {
-  width: 100%;
+  width: auto;
   padding: 10px;
-  background: #007bff;
+  background: #b3894f;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 button:hover {
-  background: #0056b3;
+  background: #e6c47a;
 }
 .register-link {
   margin-top: 10px;
@@ -1207,7 +1216,7 @@ padding-top: 10px; /* Imposta il padding superiore per dispositivi mobili */
     padding-right: 20px; /* Imposta il padding destro per dispositivi mobili */
     padding-left: 20px; /* Imposta il padding sinistro per dispositivi mobili */
   }
-  
+
 
   .containerhome {
     display: flex;
