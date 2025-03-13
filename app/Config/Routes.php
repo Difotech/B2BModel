@@ -36,15 +36,16 @@ $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 
 // ✅ Rotte per la registrazione
-$routes->get('register', 'RegisterController::index');  // Mostra il form di registrazione
+
 $routes->post('register', 'RegisterController::register'); // Elabora il form di registrazione
 
 // Rotte per il login
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login', 'LoginController::login');
 
-$routes->get('/logout', 'LoginController::logout');
+$routes->get('/logout', 'LogoutController::logout');
 
+$routes->get('/catalogo', 'CatalogoController::index');
 
 // Rotta per l'area personale (solo per utenti loggati)
 $routes->get('/area-personale', 'LoginController::areaPersonale', ['filter' => 'auth']);
