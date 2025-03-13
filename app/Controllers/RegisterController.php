@@ -32,7 +32,7 @@ class RegisterController extends Controller {
 
             $userModel->registerUser($userData);
 
-            return redirect()->to('/accesso')->with('success', 'Registrazione completata!');
+            return redirect()->to('/login')->with('success', 'Registrazione completata!');
         }
 
         return view('register');
