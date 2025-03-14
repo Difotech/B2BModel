@@ -1,7 +1,7 @@
 <div class="container">
     <h3>Accedi</h3>
     <!-- Form di Login -->
-    <form action="<?= base_url('/login') ?>" method="post">
+    <form action="<?= base_url('/login1') ?>" method="post">
         <?= csrf_field() ?> <!-- Protezione CSRF -->
 
         <div class="form-group">

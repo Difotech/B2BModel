@@ -18,7 +18,7 @@ class LoginController extends Controller
                 'email'    => 'required|valid_email',
                 'password' => 'required',
             ])) {
-                return view('accesso', ['validation' => $this->validator]);
+                return view('login', ['validation' => $this->validator]);
             }
 
             $userModel = new UserModel();
@@ -39,7 +39,7 @@ class LoginController extends Controller
             }
         }
 
-        return view('accesso');
+        return view('login');
     }
 
     public function logout() {

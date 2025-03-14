@@ -19,5 +19,5 @@
     </form>
     
     <p>Hai già un account?</p>
-    <a href="<?= base_url('/login') ?>" class="accesso.php">Accedi</a>
+    <a href="<?= base_url('/login') ?>" class="login.php">Accedi</a>
 </div>
