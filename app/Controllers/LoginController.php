@@ -56,8 +56,20 @@ class LoginController extends Controller
         if (!session()->get('isLoggedIn')) {
             return redirect()->to('/login');
         }
-
-        // Mostra la pagina dell'area personale con il nome utente
-        return view('area_personale', ['nome' => session()->get('nome')]);
+    
+        $user_id = session()->get('userId'); // id dell'utente loggato
+    
+        // Carica il model delle richieste
+        $richiestaModel = new \App\Models\RichiestaModel();
+    
+        // Recupera tutte le richieste associate a questo utente
+        $richieste = $richiestaModel->where('user_id', $user_id)->findAll();
+    
+        // Passa i dati alla vista
+        return view('area_personale', [
+            'nome'      => session()->get('nome'), 
+            'richieste' => $richieste
+        ]);
     }
 }
+    

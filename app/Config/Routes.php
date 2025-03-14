@@ -35,6 +35,7 @@ $routes->post('/login1', 'LoginController::login');
 $routes->get('/logout', 'LoginController::logout');
 
 $routes->get('/catalogo1', 'CatalogoController::index');
+$routes->match(['get','post'], 'fai-una-richiesta', 'RichiestaController::faiUnaRichiesta');
 
 $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
