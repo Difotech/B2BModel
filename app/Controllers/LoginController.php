@@ -51,31 +51,35 @@ class LoginController extends Controller
         return redirect()->to('/login');
     }
     
-    public function areaPersonale()
-{
-    $session = session();
-
-    // Controlla se l'utente è loggato
-    if (!$session->get('isLoggedIn')) {
-        return redirect()->to('/login');
-    }
-
-    // Recupera l'ID dell'utente loggato
-    $userId = $session->get('id');
-
-    // Istanzia il modello PreventivoModel
-    $preventivoModel = new \App\Models\PreventivoModel();
-
-    // Recupera i preventivi associati all'utente loggato
-    $richieste = $preventivoModel->where('user_id', $userId)->findAll();
-
-    // Passa i dati alla vista
-    return view('pages/area-personale', [
-        'nome' => $session->get('nome'), // Recupera il nome utente dalla sessione
-        'richieste' => $richieste // Passa i preventivi alla vista
-
-    ]);
-}
+        public function areaPersonale()
+        {
+            $session = session();
+    
+            // Controlla se l'utente è loggato
+            if (!$session->get('isLoggedIn')) {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'message' => 'Utente non autenticato'
+                ]);
+            }
+    
+            // Recupera l'ID dell'utente loggato
+            $userId = $session->get('id');
+    
+            // Istanzia il modello PreventivoModel
+            $preventivoModel = new PreventivoModel();
+    
+            // Recupera i preventivi associati all'utente loggato
+            $richieste = $preventivoModel->where('user_id', $userId)->findAll();
+    
+            // Restituisce i dati in formato JSON
+            return $this->response->setJSON([
+                'status' => 'success',
+                'data' => $richieste
+            ]);
+        }
+    
+    
 
     
 }

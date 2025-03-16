@@ -39,7 +39,7 @@ $routes->get('/catalogo1', 'CatalogoController::index');
 
 
 $routes->post('/faiunarichiesta1', 'PreventivoController::faiUnaRichiesta');
-$routes->get('/area-personale', 'LoginController::areaPersonale');
+$routes->get('/area-personale1', 'LoginController::areaPersonale');
 
 
 $routes->get('pages', 'Pages::index');
