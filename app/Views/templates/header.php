@@ -50,7 +50,7 @@
     <li><a href="<?= base_url('catalogo') ?>">CATALOGO</a></li>
     <li><a href="<?= base_url('faiunarichiesta') ?>">FAI UNA RICHIESTA</a></li>
     <li><a href="<?= base_url('contattaci') ?>">CONTATTACI</a></li>
-    <li><a href="<?= base_url('blog') ?>">BLOG</a></li>
+
   </ul>
   <div class="user-info">
     <?php if (session()->get('isLoggedIn')): ?>

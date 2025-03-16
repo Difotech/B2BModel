@@ -16,7 +16,7 @@ class PreventivoModel extends Model
         'puccia',
         'pinsaromana',
         'ciabatta',
-        'focciatondbarese',
+        'focciatondabarese',
         'focacciacateringbarese',
         'focacciacateringpomodoro',
         'focacciacateringbianca'

@@ -11,36 +11,57 @@ class PreventivoController extends Controller
     {
         $session = session();
         $preventivoModel = new PreventivoModel();
+        $request = $this->request->getJSON();
 
         // Controlla se l'utente è loggato
-        if (!$session->get('logged_in')) {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Devi essere loggato per inviare una richiesta.']);
+        $userId = $session->get('isLoggedIn') ? $session->get('id') : null;
+        $email = isset($request->email) ? $request->email : null;
+
+        if (!$userId && !$email) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Devi essere loggato o fornire un’email.'
+            ]);
         }
 
-        // Ottiene l'ID dell'utente loggato
-        $user_id = $session->get('id');
-
-        // Salva solo user_id e data della richiesta
-        $preventivoData = [
-            'user_id' => $user_id,
+        // Creazione dell'array dati per il preventivo
+        $datiPreventivo = [
+            'user_id' => $userId,
+            'email' => $email,
+            'status' => 'in attesa',
             'created_at' => date('Y-m-d H:i:s')
         ];
 
-        $preventivoModel->insert($preventivoData);
+        // Inizializza i campi della tabella con valore 0
+        $prodottiDisponibili = [
+            'basepizza', 'puccia', 'pinsaromana', 'ciabatta',
+            'focciatondabarese', 'focciacateringbarese', 'focciacateringpomodoro', 'focciacateringbianca'
+        ];
 
-        return $this->response->setJSON(['status' => 'success', 'message' => 'Preventivo inviato con successo!']);
-    }
-
-    public function listaPreventivi()
-    {
-        $session = session();
-        if (!$session->get('logged_in')) {
-            return redirect()->to('/login');
+        foreach ($prodottiDisponibili as $prodotto) {
+            $datiPreventivo[$prodotto] = 0; // Valore di default
         }
 
-        $preventivoModel = new PreventivoModel();
-        $data['preventivi'] = $preventivoModel->getPreventiviByUser($session->get('id'));
+        // Aggiorna la quantità per i prodotti richiesti
+        foreach ($request->prodotti as $prodotto) {
+            $colonna = strtolower(str_replace(' ', '', $prodotto->nome)); // Converti nome in colonna
+            if (in_array($colonna, $prodottiDisponibili)) {
+                $datiPreventivo[$colonna] = intval($prodotto->quantita);
+            }
+        }
 
-        return view('area_personale/preventivi', $data);
+        // Inserisci il preventivo nel database
+        if ($preventivoModel->insert($datiPreventivo)) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Preventivo inviato con successo!'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Errore durante il salvataggio, riprova.'
+            ]);
+        }
     }
 }
+
