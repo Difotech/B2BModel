@@ -1,11 +1,10 @@
-
 <body>
-<div class="container">
-<h1>Benvenuto: <?= esc(session()->get('nome')) ?> (ID: <?= esc(session()->get('id')) ?>)</h1>
+    <div class="container">
+        <h1>Benvenuto: <?= esc(session()->get('nome')) ?> (ID: <?= esc(session()->get('id')) ?>)</h1>
+        <h2>Le tue richieste di preventivo</h2>   
     </div>
 
     <div class="container">
-        <h2>Le tue richieste di preventivo</h2>
         <div id="richieste-container">
             <p>Caricamento preventivi...</p>
         </div>
@@ -27,6 +26,14 @@
                                                 <th>ID Preventivo</th>
                                                 <th>Status</th>
                                                 <th>Data Richiesta</th>
+                                                <th>Base Pizza</th>
+                                                <th>Puccia</th>
+                                                <th>Pinsa Romana</th>
+                                                <th>Ciabatta</th>
+                                                <th>Focaccia Tonda Barese</th>
+                                                <th>Focaccia Catering Barese</th>
+                                                <th>Focaccia Catering Pomodoro</th>
+                                                <th>Focaccia Catering Bianca</th>
                                             </tr>
                                         </thead>
                                         <tbody>`;
@@ -36,6 +43,14 @@
                                         <td>${richiesta.id}</td>
                                         <td>${richiesta.status}</td>
                                         <td>${new Date(richiesta.created_at).toLocaleString()}</td>
+                                        <td>${richiesta.basepizza}</td>
+                                        <td>${richiesta.puccia}</td>
+                                        <td>${richiesta.pinsaromana}</td>
+                                        <td>${richiesta.ciabatta}</td>
+                                        <td>${richiesta.focacciatondabarese}</td>
+                                        <td>${richiesta.focacciacateringbarese}</td>
+                                        <td>${richiesta.focacciacateringpomodoro}</td>
+                                        <td>${richiesta.focacciacateringbianca}</td>
                                     </tr>`;
                         });
 
@@ -53,5 +68,4 @@
 
         window.onload = caricaPreventivi;
     </script>
-
 </body>
