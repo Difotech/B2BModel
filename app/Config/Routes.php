@@ -35,12 +35,17 @@ $routes->post('/login1', 'LoginController::login');
 $routes->get('/logout', 'LoginController::logout');
 
 $routes->get('/catalogo1', 'CatalogoController::index');
-$routes->match(['get','post'], 'fai-una-richiesta', 'RichiestaController::faiUnaRichiesta');
+
+
+
+$routes->post('/faiunarichiesta1', 'PreventivoController::faiUnaRichiesta');
+$routes->get('/area-personale', 'LoginController::areaPersonale');
+
 
 $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 // Rotta per l'area personale (solo per utenti loggati)
-$routes->get('/area-personale', 'LoginController::areaPersonale', ['filter' => 'auth']);
+
 
 
 ?>

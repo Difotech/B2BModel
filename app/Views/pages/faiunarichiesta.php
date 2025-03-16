@@ -1,33 +1,103 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Fai una Richiesta di Preventivo</title>
-</head>
 <body>
-    <h1>Fai una Richiesta</h1>
+    <div class="container">
+        <h1>Richiesta Preventivo</h1>
+    </div>
+    <div class="container">
+        <div class="sez_catalogo" id="catalogo">
+            <p>Caricamento prodotti...</p>
+        </div>
+    </div>
+    <div class="container">
+        <label for="email" id="emailLabel" style="display: none;">Email:</label>
+        <input type="email" id="email" placeholder="Inserisci la tua email" style="display: none;">
+        <button class="bottone" id="btnInvia" onclick="inviaRichiesta()">Invia richiesta di preventivo</button>
+        <p id="feedback" style="display: none; color: green;"></p>
+    </div>
 
-    <?php if (session()->getFlashdata('success')): ?>
-        <p style="color: green;">
-            <?= session()->getFlashdata('success') ?>
-        </p>
-    <?php endif; ?>
+    <script>
+        console.log("🔍 Debug: Pagina caricata.");
+        let richieste = [];
 
-    <form action="<?= base_url('/faiUnaRichiesta') ?>" method="post">
-        <?= csrf_field() ?>
+        async function caricaCatalogo() {
+            try {
+                let response = await fetch('<?= base_url('/catalogo1') ?>');
+                let data = await response.json();
+                let container = document.getElementById("catalogo");
+                container.innerHTML = "";
 
-        <label for="codiceprodotto">Codice Prodotto:</label>
-        <input type="text" name="codiceprodotto" id="codiceprodotto" required>
+                if (data.status === "success" && data.data.length > 0) {
+                    data.data.forEach(prodotto => {
+                        let articolo = `
+                        <article>
+                            <h3>${prodotto.nomeprodotto}</h3>
+                            <img src="<?= base_url('public/img/catalogo/') ?>${prodotto.immagine}" width="250px">
+                            <p>Codice: <span class="codice">${prodotto.codiceprodotto}</span></p>
+                            <label>Quantità:</label>
+                            <input type="number" min="0" value="0">
+                        </article>`;
+                        container.insertAdjacentHTML("beforeend", articolo);
+                    });
+                } else {
+                    container.innerHTML = "<p>Nessun prodotto disponibile.</p>";
+                }
+            } catch (error) {
+                console.error("❌ Errore nel caricamento catalogo:", error);
+                document.getElementById("catalogo").innerHTML = "<p>Errore nel caricamento prodotti.</p>";
+            }
+        }
 
-        <br><br>
+        async function inviaRichiesta() {
+            let prodotti = [];
+            document.querySelectorAll("article").forEach(articolo => {
+                let codice = articolo.querySelector(".codice").innerText;
+                let nome = articolo.querySelector("h3").innerText;
+                let quantita = articolo.querySelector("input").value;
+                if (quantita > 0) prodotti.push({ codice, nome, quantita });
+            });
 
-        <label for="note">Note Aggiuntive:</label><br>
-        <textarea name="note" id="note" rows="4" cols="50"></textarea>
+            if (prodotti.length === 0) {
+                alert("Seleziona almeno un prodotto!");
+                return;
+            }
 
-        <br><br>
+            let richiesta = { prodotti };
+            let emailField = document.getElementById("email");
 
-        <button type="submit">Invia Richiesta</button>
-    </form>
+            if (emailField.style.display !== "none" && emailField.value.trim() === "") {
+                alert("Inserisci un'email.");
+                return;
+            } else if (emailField.style.display !== "none") {
+                richiesta.email = emailField.value.trim();
+            }
 
+            document.getElementById("btnInvia").disabled = true;
+            document.getElementById("feedback").style.display = "block";
+            document.getElementById("feedback").textContent = "Invio in corso...";
+
+            try {
+                let response = await fetch('<?= base_url('/faiunarichiesta1') ?>', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(richiesta)
+                });
+                let data = await response.json();
+                alert(data.message);
+                document.getElementById("feedback").textContent = "Richiesta inviata con successo!";
+            } catch (error) {
+                alert("Errore tecnico. Contatta il supporto.");
+                console.error("❌ Errore durante l'invio della richiesta:", error);
+                document.getElementById("feedback").textContent = "Errore durante l'invio.";
+            }
+
+            document.getElementById("btnInvia").disabled = false;
+        }
+
+        window.onload = function() {
+            caricaCatalogo();
+            <?php if (!session()->get('isLoggedIn')): ?>
+                document.getElementById("email").style.display = "block";
+                document.getElementById("emailLabel").style.display = "block";
+            <?php endif; ?>
+        };
+    </script>
 </body>
-</html>

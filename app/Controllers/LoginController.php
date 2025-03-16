@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\PreventivoModel; 
 use CodeIgniter\Controller;
 
 class LoginController extends Controller
@@ -29,6 +30,7 @@ class LoginController extends Controller
                 // Imposta la sessione con i dati dell'utente
                 $sessionData = [
                     'isLoggedIn' => true,
+                    'id'         => $user['id'],
                     'nome'       => $user['nome'] // Supponendo che la colonna nel DB sia 'nome'
                 ];
                 session()->set($sessionData);
@@ -49,27 +51,32 @@ class LoginController extends Controller
         return redirect()->to('/login');
     }
     
-    // Metodo per la pagina dell'area personale
     public function areaPersonale()
-    {
-        // Verifica se l'utente è loggato
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/login');
-        }
-    
-        $user_id = session()->get('userId'); // id dell'utente loggato
-    
-        // Carica il model delle richieste
-        $richiestaModel = new \App\Models\RichiestaModel();
-    
-        // Recupera tutte le richieste associate a questo utente
-        $richieste = $richiestaModel->where('user_id', $user_id)->findAll();
-    
-        // Passa i dati alla vista
-        return view('area_personale', [
-            'nome'      => session()->get('nome'), 
-            'richieste' => $richieste
-        ]);
+{
+    $session = session();
+
+    // Controlla se l'utente è loggato
+    if (!$session->get('isLoggedIn')) {
+        return redirect()->to('/login');
     }
+
+    // Recupera l'ID dell'utente loggato
+    $userId = $session->get('id');
+
+    // Istanzia il modello PreventivoModel
+    $preventivoModel = new \App\Models\PreventivoModel();
+
+    // Recupera i preventivi associati all'utente loggato
+    $richieste = $preventivoModel->where('user_id', $userId)->findAll();
+
+    // Passa i dati alla vista
+    return view('pages/area-personale', [
+        'nome' => $session->get('nome'), // Recupera il nome utente dalla sessione
+        'richieste' => $richieste // Passa i preventivi alla vista
+
+    ]);
+}
+
+    
 }
     
