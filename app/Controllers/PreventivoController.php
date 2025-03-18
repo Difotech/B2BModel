@@ -64,4 +64,3 @@ class PreventivoController extends Controller
         }
     }
 }
-

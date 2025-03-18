@@ -31,4 +31,56 @@ class AreaPersonaleController extends Controller
         // Carica la vista con i dati
         return view('area-personale', $data);
     }
+
+
+    public function eliminaPreventivo()
+{
+    $session = session();
+
+    // Se l'utente non è loggato, restituisci errore
+    if (!$session->get('isLoggedIn')) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Utente non autenticato'
+        ]);
+    }
+
+    // Ottieni i dati dalla richiesta JSON
+    $json = $this->request->getJSON();
+    $id = $json->id ?? null;
+
+    if (!$id) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'ID non valido'
+        ]);
+    }
+
+    $preventivoModel = new PreventivoModel();
+
+    // Verifica che il preventivo appartenga all'utente loggato
+    $userId = $session->get('id');
+    $preventivo = $preventivoModel->where('id', $id)->where('user_id', $userId)->first();
+
+    if (!$preventivo) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Preventivo non trovato o non autorizzato'
+        ]);
+    }
+
+    // Elimina il preventivo
+    if ($preventivoModel->delete($id)) {
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Preventivo eliminato con successo'
+        ]);
+    } else {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Errore durante l\'eliminazione'
+        ]);
+    }
+}
+
 }

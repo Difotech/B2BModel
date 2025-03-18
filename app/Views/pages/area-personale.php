@@ -34,6 +34,7 @@
                                                 <th>Focaccia Catering Barese</th>
                                                 <th>Focaccia Catering Pomodoro</th>
                                                 <th>Focaccia Catering Bianca</th>
+                                                <th>Azioni</th>
                                             </tr>
                                         </thead>
                                         <tbody>`;
@@ -51,6 +52,7 @@
                                         <td>${richiesta.focacciacateringbarese}</td>
                                         <td>${richiesta.focacciacateringpomodoro}</td>
                                         <td>${richiesta.focacciacateringbianca}</td>
+                                        <td><button onclick="eliminaPreventivo(${richiesta.id})">Elimina</button></td>
                                     </tr>`;
                         });
 
@@ -65,6 +67,33 @@
                     document.getElementById("richieste-container").innerHTML = "<p>Errore nel caricamento dei preventivi.</p>";
                 });
         }
+
+        function eliminaPreventivo(id) {
+    if (confirm("Sei sicuro di voler eliminare questo preventivo?")) {
+        fetch('<?= base_url('/elimina-preventivo') ?>', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '<?= csrf_hash() ?>' // Aggiunge il token CSRF
+            },
+            body: JSON.stringify({ id: id })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("Preventivo eliminato con successo.");
+                caricaPreventivi();
+            } else {
+                alert("Errore nell'eliminazione del preventivo.");
+            }
+        })
+        .catch(error => {
+            console.error("❌ Errore nella richiesta di eliminazione:", error);
+            alert("Errore nella richiesta di eliminazione.");
+        });
+    }
+}
+
 
         window.onload = caricaPreventivi;
     </script>
