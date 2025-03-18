@@ -1,1 +1,1 @@
-__ci_last_regenerate|i:1742312643;_ci_previous_url|s:52:"http://localhost/codeigniter/B2BModel/area-personale";id|s:2:"16";nome|s:7:"alessio";isLoggedIn|b:1;
+__ci_last_regenerate|i:1742313612;_ci_previous_url|s:52:"http://localhost/codeigniter/B2BModel/area-personale";id|s:2:"24";nome|s:5:"Admin";role|s:4:"user";ruolo|s:5:"admin";isLoggedIn|b:1;

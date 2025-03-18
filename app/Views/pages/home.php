@@ -10,7 +10,7 @@
                                 </h2>
                                 <h2><strong>Taralli</strong>, orecchiette, olio, vino e tanto altro con l'essenza della <strong>PUGLIA</strong></h2>
                                 
-                                 <a href="https://www.murgiapizza.com/sezioni/catalogo.html"><center> <button class="bottone"><span>VAI AL CATALOGO</span></button></center></a>
+                                <a href="<?= base_url('catalogo') ?>"><center> <button class="bottone"><span>VAI AL CATALOGO</span></button></center></a>
                           </div>
                           
                             <div class="imagehome">

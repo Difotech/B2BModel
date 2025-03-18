@@ -42,7 +42,11 @@ $routes->get('/catalogo1', 'CatalogoController::index');
 $routes->post('/faiunarichiesta1', 'PreventivoController::faiUnaRichiesta');
 $routes->get('/area-personale1', 'LoginController::areaPersonale');
 $routes->post('/contattaci1', 'ContattaciController::invia');
-$routes->post('/elimina-preventivo', 'AreaPersonaleController::eliminaPreventivo');
+$routes->get('/get-users', 'AreaPersonaleAdminController::getUsers');
+$routes->post('/delete-user', 'AreaPersonaleAdminController::deleteUser');
+$routes->post('/add-product', 'AreaPersonaleAdminController::addProduct');
+
+
 
 $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
