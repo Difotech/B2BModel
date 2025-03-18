@@ -31,7 +31,7 @@ class RegisterController extends Controller {
             ];
 
             $userModel->registerUser($userData);
-
+            session()->setFlashdata('success', 'Registrazione completata con successo!');
             return redirect()->to('/login')->with('success', 'Registrazione completata!');
         }
 
