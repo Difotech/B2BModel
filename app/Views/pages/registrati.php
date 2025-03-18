@@ -1,13 +1,16 @@
 <div class="container">
     <h2>Registrati</h2>
     <form action="<?= base_url('/register') ?>" method="post">
-        <?= csrf_field() ?>  <!-- Questo aggiunge automaticamente il token -->
+        <?= csrf_field() ?>  <!-- Protezione CSRF -->
     
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
     
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+
+        <label for="piva">Partita IVA:</label>
+        <input type="text" id="piva" name="piva" required>  <!-- Nuovo campo -->
     
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
@@ -19,5 +22,5 @@
     </form>
     
     <p>Hai già un account?</p>
-    <a href="<?= base_url('/login') ?>" class="login.php">Accedi</a>
+    <a href="<?= base_url('/login') ?>">Accedi</a>
 </div>

@@ -39,13 +39,15 @@ $routes->get('/catalogo1', 'CatalogoController::index');
 
 
 
-$routes->post('/faiunarichiesta1', 'PreventivoController::faiUnaRichiesta');
+$routes->post('/faiunarichiesta1', 'PreventivoController::store');
 $routes->get('/area-personale1', 'LoginController::areaPersonale');
 $routes->post('/contattaci1', 'ContattaciController::invia');
 $routes->get('/get-users', 'AreaPersonaleAdminController::getUsers');
 $routes->post('/delete-user', 'AreaPersonaleAdminController::deleteUser');
 $routes->post('/add-product', 'AreaPersonaleAdminController::addProduct');
-
+$routes->post('/delete-product', 'AreaPersonaleAdminController::deleteProduct');
+$routes->post('/update-preventivo-status', 'AreaPersonaleAdminController::updatePreventivoStatus');
+$routes->post('/get-all-preventivi', 'AreaPersonaleAdminController::getAllPreventivi');
 
 
 $routes->get('pages', 'Pages::index');

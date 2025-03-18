@@ -7,60 +7,57 @@ use CodeIgniter\Controller;
 
 class PreventivoController extends Controller
 {
-    public function faiUnaRichiesta()
+    public function store()
     {
-        $session = session();
-        $preventivoModel = new PreventivoModel();
-        $request = $this->request->getJSON();
+        $request = service('request');
 
-        // Controlla se l'utente è loggato
-        $userId = $session->get('isLoggedIn') ? $session->get('id') : null;
-        $email = isset($request->email) ? $request->email : null;
-
-        if (!$userId && !$email) {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Devi essere loggato o fornire un’email.'
-            ]);
-        }
-
-        // Creazione dell'array dati per il preventivo
-        $datiPreventivo = [
-            'user_id' => $userId,
-            'email' => $email,
-            'status' => 'in attesa',
-            'created_at' => date('Y-m-d H:i:s')
+        $rules = [
+            'user_id'     => 'required|integer',
+            'status'      => 'required|max_length[50]',
+            'basepizza'   => 'permit_empty|numeric',
+            'puccia'      => 'permit_empty|numeric',
+            'pinsaromana' => 'permit_empty|numeric',
+            'ciabatta'    => 'permit_empty|numeric',
+            'focacciatondabarese' => 'permit_empty|numeric',
+            'focacciacateringbarese' => 'permit_empty|numeric',
+            'focacciacateringpomodoro' => 'permit_empty|numeric',
+            'focacciacateringbianca' => 'permit_empty|numeric',
         ];
 
-        // Inizializza i campi della tabella con valore 0
-        $prodottiDisponibili = [
-            'basepizza', 'puccia', 'pinsaromana', 'ciabatta',
-            'focciatondabarese', 'focciacateringbarese', 'focciacateringpomodoro', 'focciacateringbianca'
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('error', 'Errore nei dati del preventivo.');
+        }
+
+        $model = new PreventivoModel();
+        $data = [
+            'user_id'     => $request->getPost('user_id'),
+            'status'      => $request->getPost('status'),
+            'created_at'  => date('Y-m-d H:i:s'),
+            'basepizza'   => $request->getPost('basepizza'),
+            'puccia'      => $request->getPost('puccia'),
+            'pinsaromana' => $request->getPost('pinsaromana'),
+            'ciabatta'    => $request->getPost('ciabatta'),
+            'focacciatondabarese' => $request->getPost('focacciatondabarese'),
+            'focacciacateringbarese' => $request->getPost('focacciacateringbarese'),
+            'focacciacateringpomodoro' => $request->getPost('focacciacateringpomodoro'),
+            'focacciacateringbianca' => $request->getPost('focacciacateringbianca'),
         ];
 
-        foreach ($prodottiDisponibili as $prodotto) {
-            $datiPreventivo[$prodotto] = 0; // Valore di default
-        }
-
-        // Aggiorna la quantità per i prodotti richiesti
-        foreach ($request->prodotti as $prodotto) {
-            $colonna = strtolower(str_replace(' ', '', $prodotto->nome)); // Converti nome in colonna
-            if (in_array($colonna, $prodottiDisponibili)) {
-                $datiPreventivo[$colonna] = intval($prodotto->quantita);
-            }
-        }
-
-        // Inserisci il preventivo nel database
-        if ($preventivoModel->insert($datiPreventivo)) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Preventivo inviato con successo!'
-            ]);
+        if ($model->insert($data)) {
+            return redirect()->back()->with('success', 'Preventivo inserito con successo!');
         } else {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Errore durante il salvataggio, riprova.'
-            ]);
+            return redirect()->back()->with('error', 'Errore nell’inserimento del preventivo.');
         }
     }
+
+    public function getProdottiCatalogo()
+{
+    $catalogoModel = new \App\Models\CatalogoModel();
+    $prodotti = $catalogoModel->findAll(); // Recupera tutti i prodotti
+
+    return $this->response->setJSON([
+        'status' => 'success',
+        'prodotti' => $prodotti
+    ]);
+}
 }

@@ -16,7 +16,7 @@ class PreventivoModel extends Model
         'puccia',
         'pinsaromana',
         'ciabatta',
-        'focciatondabarese',
+        'focacciatondabarese', // ✅ Corretto il nome del campo
         'focacciacateringbarese',
         'focacciacateringpomodoro',
         'focacciacateringbianca'

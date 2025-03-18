@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 use App\Models\CatalogoModel;
-
+use App\Models\PreventivoModel;
 class AreaPersonaleAdminController extends Controller
 {
     public function getUsers()
@@ -49,31 +49,91 @@ class AreaPersonaleAdminController extends Controller
     }
 
     public function addProduct()
-{
-    helper(['form']);
-
-    if ($this->request->getMethod() === 'post') {
+    {
         $rules = [
-            'nomeprodotto'   => 'required|min_length[3]|max_length[255]',
+            'nomeprodotto'   => 'required',
             'codiceprodotto' => 'required|is_unique[catalogo.codiceprodotto]',
             'immagine'       => 'required'
         ];
-
+    
         if (!$this->validate($rules)) {
-            return redirect()->back()->with('error', 'Dati non validi.');
+            return redirect()->back()->withInput()->with('error', 'Dati non validi. Controlla i campi e riprova.');
         }
-
+    
         $catalogoModel = new CatalogoModel();
         $newProduct = [
             'nomeprodotto'   => $this->request->getPost('nomeprodotto'),
             'codiceprodotto' => $this->request->getPost('codiceprodotto'),
             'immagine'       => $this->request->getPost('immagine') // Percorso dell'immagine
         ];
+    
+        if ($catalogoModel->insert($newProduct)) {
+            session()->setFlashdata('success', 'Prodotto inserito con successo!');
+        } else {
+            session()->setFlashdata('error', 'Errore nell’inserimento del prodotto.');
+        }
+    
+        return redirect()->back();
+    }
+    
 
-        $catalogoModel->insert($newProduct);
-        return redirect()->back()->with('success', 'Prodotto caricato con successo!');
+public function deleteProduct()
+{
+    $codiceProdotto = $this->request->getPost('codiceprodotto');
+
+    if (!$codiceProdotto) {
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Codice prodotto mancante.']);
     }
 
-    return redirect()->back()->with('error', 'Errore durante il caricamento.');
+    $catalogoModel = new CatalogoModel();
+    $prodotto = $catalogoModel->where('codiceprodotto', $codiceProdotto)->first();
+
+    if (!$prodotto) {
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Prodotto non trovato.']);
+    }
+
+    $catalogoModel->where('codiceprodotto', $codiceProdotto)->delete();
+    
+    session()->setFlashdata('success', 'Prodotto eliminato con successo!');
+    return $this->response->setJSON(['status' => 'success', 'message' => 'Prodotto eliminato con successo.']);
+}
+
+public function updatePreventivoStatus()
+{
+    if ($this->request->getMethod() === 'post') {
+        $idPreventivo = $this->request->getPost('id_preventivo');
+
+        if (!$idPreventivo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'ID Preventivo mancante.']);
+        }
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('preventivi');
+
+        // Correzione: Uso di get() invece di first()
+        $query = $builder->where('id', $idPreventivo)->get();
+        $preventivo = $query->getRow();
+
+        if (!$preventivo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Preventivo non trovato.']);
+        }
+
+        $builder->where('id', $idPreventivo)->update(['status' => 'Completato']);
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Preventivo aggiornato con successo.']);
+    }
+
+    return $this->response->setStatusCode(403)->setJSON(['status' => 'error', 'message' => 'Azione non consentita']);
+}
+
+public function getAllPreventivi()
+{
+    $preventivoModel = new \App\Models\PreventivoModel();
+    $preventivi = $preventivoModel->findAll();
+
+    return $this->response->setJSON([
+        'status' => 'success',
+        'preventivi' => $preventivi
+    ]);
 }
 }
