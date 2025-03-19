@@ -149,7 +149,7 @@
                         data.preventivi.forEach(preventivo => {
                             table += `<tr>
                                         <td>${preventivo.id}</td>
-                                        <td>${preventivo.cliente}</td>
+                                        <td>${preventivo.user_id}</td>
                                         <td>${preventivo.status}</td>
                                     </tr>`;
                         });
@@ -257,7 +257,10 @@
         <button onclick="eliminaProdotto()">Conferma Eliminazione</button>
     </div>
 
-
+    <div class="container">
+        <div id="preventivi-container"></div> <!-- Aggiunto questo div -->
+    </div>
+    
     <div class="container" id="aggiorna-preventivo-form" style="display: none;">
         <h3>Aggiorna Stato Preventivo</h3>
         <label for="idPreventivo">Inserisci l'ID del Preventivo:</label>

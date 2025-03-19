@@ -49,7 +49,7 @@ $routes->post('/delete-user', 'AreaPersonaleAdminController::deleteUser');
 $routes->post('/add-product', 'AreaPersonaleAdminController::addProduct');
 $routes->post('/delete-product', 'AreaPersonaleAdminController::deleteProduct');
 $routes->post('/update-preventivo-status', 'AreaPersonaleAdminController::updatePreventivoStatus');
-$routes->post('/get-all-preventivi', 'AreaPersonaleAdminController::getAllPreventivi');
+$routes->get('/get-all-preventivi', 'AreaPersonaleAdminController::getAllPreventivi');
 
 
 $routes->get('pages', 'Pages::index');
