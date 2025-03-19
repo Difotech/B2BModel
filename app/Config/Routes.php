@@ -40,6 +40,8 @@ $routes->get('/catalogo1', 'CatalogoController::index');
 
 
 $routes->post('/faiunarichiesta1', 'PreventivoController::store');
+$routes->post('elimina-preventivo', 'PreventivoController::eliminaPreventivo');
+
 $routes->get('/area-personale1', 'LoginController::areaPersonale');
 $routes->post('/contattaci1', 'ContattaciController::invia');
 $routes->get('/get-users', 'AreaPersonaleAdminController::getUsers');

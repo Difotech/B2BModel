@@ -60,4 +60,31 @@ class PreventivoController extends Controller
         'prodotti' => $prodotti
     ]);
 }
+
+public function eliminaPreventivo()
+{
+    $preventivoModel = new PreventivoModel();
+    $request = $this->request->getJSON();
+    $id = $request->id ?? null; // Ottieni l'ID dal corpo della richiesta
+
+    if (!$id || !$preventivoModel->find($id)) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Preventivo non trovato!'
+        ]);
+    }
+
+    if ($preventivoModel->delete($id)) {
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Preventivo eliminato con successo!'
+        ]);
+    } else {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Errore durante l\'eliminazione, riprova.'
+        ]);
+    }
+}
+
 }
