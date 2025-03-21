@@ -308,6 +308,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 button:hover {
   background: #e6c47a;
 }

@@ -13,7 +13,7 @@ class RegisterController extends Controller {
             $rules = [
                 'nome'            => 'required|min_length[3]|max_length[100]',
                 'email'           => 'required|valid_email|is_unique[users.email]',
-                'piva'            => 'required|exact_length[11]|numeric',  // Validazione P.IVA
+                'piva'            => 'required|exact_length[11]|numeric',  
                 'password'        => 'required|min_length[6]',
                 'confirm_password' => 'matches[password]',
             ];
@@ -23,12 +23,22 @@ class RegisterController extends Controller {
             }
 
             $userModel = new UserModel();
+            
+            // Controllo manuale se l'email esiste (facoltativo, la validazione già lo fa)
+            if ($userModel->where('email', $this->request->getPost('email'))->first()) {
+                return view('register', [
+                    'validation' => $this->validator,
+                    'email_error' => 'Questa email è già in uso. Scegline un\'altra.'
+                ]);
+            }
+
+            // Hash della password
             $passwordHash = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
 
             $userData = [
                 'nome'     => $this->request->getPost('nome'),
                 'email'    => $this->request->getPost('email'),
-                'piva'     => $this->request->getPost('piva'),  // Salva P.IVA
+                'piva'     => $this->request->getPost('piva'),  
                 'password' => $passwordHash,
             ];
 

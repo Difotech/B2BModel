@@ -13,12 +13,12 @@ class PreventivoModel extends Model
         'status',
         'created_at',
         'basepizza',
-        'puccia',
-        'pinsaromana',
-        'ciabatta',
+        'vino',
+        'olio',
+        'panzerotto',
         'focacciatondabarese', // ✅ Corretto il nome del campo
         'focacciacateringbarese',
         'focacciacateringpomodoro',
-        'focacciacateringbianca'
+        'orecchiette'
     ];
 }

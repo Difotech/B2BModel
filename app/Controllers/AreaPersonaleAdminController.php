@@ -47,12 +47,10 @@ class AreaPersonaleAdminController extends Controller
 
         return $this->response->setStatusCode(403)->setJSON(['status' => 'error', 'message' => 'Azione non consentita']);
     }
-
     public function addProduct()
     {
         $rules = [
             'nomeprodotto'   => 'required',
-            'codiceprodotto' => 'required|is_unique[catalogo.codiceprodotto]',
             'immagine'       => 'required'
         ];
     
@@ -63,7 +61,6 @@ class AreaPersonaleAdminController extends Controller
         $catalogoModel = new CatalogoModel();
         $newProduct = [
             'nomeprodotto'   => $this->request->getPost('nomeprodotto'),
-            'codiceprodotto' => $this->request->getPost('codiceprodotto'),
             'immagine'       => $this->request->getPost('immagine') // Percorso dell'immagine
         ];
     
@@ -75,6 +72,7 @@ class AreaPersonaleAdminController extends Controller
     
         return redirect()->back();
     }
+    
     
 
 public function deleteProduct()
@@ -129,11 +127,14 @@ public function updatePreventivoStatus()
 public function getAllPreventivi()
 {
     $preventivoModel = new \App\Models\PreventivoModel();
-    $preventivi = $preventivoModel->findAll();
+    $preventivi = $preventivoModel
+    ->orderBy('created_at', 'DESC')
+    ->findAll();
 
     return $this->response->setJSON([
         'status' => 'success',
         'preventivi' => $preventivi
     ]);
 }
+
 }

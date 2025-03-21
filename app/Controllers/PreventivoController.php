@@ -9,19 +9,24 @@ class PreventivoController extends Controller
 {
     public function store()
     {
+
+        if (!session()->has('id')) {
+            return redirect()->to('/login')->with('error', 'Devi effettuare il login per inviare un preventivo.');
+        }
+        
         $request = service('request');
 
         $rules = [
             'user_id'     => 'required|integer',
             'status'      => 'required|max_length[50]',
             'basepizza'   => 'permit_empty|numeric',
-            'puccia'      => 'permit_empty|numeric',
-            'pinsaromana' => 'permit_empty|numeric',
-            'ciabatta'    => 'permit_empty|numeric',
+            'vino'      => 'permit_empty|numeric',
+            'olio' => 'permit_empty|numeric',
+            'panzerotto'    => 'permit_empty|numeric',
             'focacciatondabarese' => 'permit_empty|numeric',
             'focacciacateringbarese' => 'permit_empty|numeric',
             'focacciacateringpomodoro' => 'permit_empty|numeric',
-            'focacciacateringbianca' => 'permit_empty|numeric',
+            'orecchiette' => 'permit_empty|numeric',
         ];
 
         if (!$this->validate($rules)) {
@@ -34,19 +39,21 @@ class PreventivoController extends Controller
             'status'      => $request->getPost('status'),
             'created_at'  => date('Y-m-d H:i:s'),
             'basepizza'   => $request->getPost('basepizza'),
-            'puccia'      => $request->getPost('puccia'),
-            'pinsaromana' => $request->getPost('pinsaromana'),
-            'ciabatta'    => $request->getPost('ciabatta'),
+            'vino'      => $request->getPost('vino'),
+            'olio' => $request->getPost('olio'),
+            'panzerotto'    => $request->getPost('panzerotto'),
             'focacciatondabarese' => $request->getPost('focacciatondabarese'),
             'focacciacateringbarese' => $request->getPost('focacciacateringbarese'),
             'focacciacateringpomodoro' => $request->getPost('focacciacateringpomodoro'),
-            'focacciacateringbianca' => $request->getPost('focacciacateringbianca'),
+            'orecchiette' => $request->getPost('orecchiette'),
         ];
 
         if ($model->insert($data)) {
-            return redirect()->back()->with('success', 'Preventivo inserito con successo!');
+            session()->setFlashdata('success', 'Preventivo inserito con successo!');
+            return redirect()->to(base_url('/faiunarichiesta'));  // Reindirizza alla stessa pagina
         } else {
-            return redirect()->back()->with('error', 'Errore nell’inserimento del preventivo.');
+            session()->setFlashdata('error', 'Errore nell’inserimento del preventivo.');
+            return redirect()->to(base_url('/faiunarichiesta')); 
         }
     }
 

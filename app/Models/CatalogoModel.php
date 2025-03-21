@@ -8,5 +8,5 @@ class CatalogoModel extends Model
 {
     protected $table = 'catalogo'; // Sostituisci con il nome effettivo della tua tabella
     protected $primaryKey = 'codiceprodotto';
-    protected $allowedFields = ['nomeprodotto', 'codiceprodotto', 'immagine'];
+    protected $allowedFields = ['nomeprodotto', 'codiceprodotto', 'immagine','url'];
 }

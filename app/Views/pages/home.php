@@ -1,8 +1,166 @@
+<style>
+.container {
+    display: flex;
+    justify-content: center; /* Allinea i bottoni orizzontalmente al centro */
+    flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
+    gap: 15px; /* Distanza tra i bottoni */
+    padding: 0px;
+    width: 80vw;
+}
 
+button {
+    background-color: #a97c50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Larghezza uniforme */
+    height: 50px; /* Altezza uniforme */
+    text-align: center;
+    display: inline-block; /* Evita problemi con la dimensione */
+}
+
+button:hover {
+    background-color: #8c6239;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(169, 124, 80, 0.8);
+}
+/* HERO SECTION */
+.hero {
+  background: url('public/img/puglia-background.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-content h1 {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.hero-content span {
+  color: #ffcc00;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #ff5722;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 18px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: #e64a19;
+}
+
+/* PRODOTTI */
+.products {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 250px;
+}
+
+.product-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background:#a97c50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+
+/* CALL TO ACTION */
+.cta {
+  background: #ffcc00;
+  text-align: center;
+  padding: 40px;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 18px;
+}
+
+.cta-button {
+  background: #ff5722;
+}
+
+    </style>
 <body>
 <div id="sez_principale">
 
-         <div id="sez_home">
+       
+        
+        <section id="prodotti" class="products">
+  <h2>🍕 I Nostri Prodotti</h2>
+  <div class="product-grid">
+    <div class="product-item">
+      <img src="public/img/catalogo/1.webp" alt="Base per Pizza">
+      <h3>Base per Pizza</h3>
+      <p>Pronta da farcire, croccante e leggera.</p>
+      <a href="#" class="btn">Scopri di più</a>
+    </div>
+    <div class="product-item">
+      <img src="public/img/catalogo/9.webp" alt="Focaccia Barese">
+      <h3>Olio extra vergine di oliva</h3>
+      <p>Dal sapore intenso e convolgente</p>
+      <a href="#" class="btn">Scopri di più</a>
+    </div>
+    <div class="product-item">
+      <img src="public/img/catalogo/13.webp" alt="Panzerotto">
+      <h3>Pasticciotto Leccese</h3>
+      <p>Per una colazione da campioni</p>
+      <a href="#" class="btn">Scopri di più</a>
+    </div>
+    <div class="product-item">
+      <img src="public/img/catalogo/10.webp" alt="Pinsa Romana">
+      <h3>Orecchiette baresi</h3>
+      <p>Per un pranzo con cime di rape con i fiocchi</p>
+      <a href="#" class="btn">Scopri di più</a>
+    </div>
+  </div>
+</section>
+<div id="sez_home">
                  <div class="containerhome">
                     
                           <div class="texthome">
@@ -10,7 +168,7 @@
                                 </h2>
                                 <h2><strong>Taralli</strong>, orecchiette, olio, vino e tanto altro con l'essenza della <strong>PUGLIA</strong></h2>
                                 
-                                <a href="<?= base_url('catalogo') ?>"><center> <button class="bottone"><span>VAI AL CATALOGO</span></button></center></a>
+                                <a href="<?= base_url('catalogo') ?>"><center> <button><span>VAI AL CATALOGO</span></button></center></a>
                           </div>
                           
                             <div class="imagehome">
@@ -24,67 +182,6 @@
                 </div>
          
         </div>
-        
-        <center>
-        <p id="testoSpeciale">
-             I nostri prodotti di alta qualità con ingredienti della nostra amata <strong>Puglia</strong>.
-             <br>
-            Sulla nostra piattaforma puoi richiedere un preventivo per:
-           <br> <strong>base per pizza</strong>, <strong>base per pizza rettangolare</strong>, <strong>puccia</strong>, <strong>focaccia barese pronta</strong>, <strong>panzerotto</strong>, <strong>pinsa romana</strong>, <b>saltimbocca</b> e <b>ciabatta</b>.
-             </p></center>
-             <!-- Aggiunta dello slideshow con 4 immagini iniziali affiancate -->
 
-    <div class="slideshow-container">
-      <div class="mySlides">
-      <a href="" target="_blank">   <img class="slideshow-image" src="public/img/catalogo/1.webp" alt="Slide 1" width="500" height="350"></a>
-      </div>
-      <div class="mySlides">
-         <a href="" target="_blank">  <img class="slideshow-image" src="public/img/catalogo/2.webp" alt="Slide 2" width="500" height="350"></a>
-      </div>
-      <div class="mySlides">
-        <a href="" target="_blank">   <img class="slideshow-image" src="public/img/catalogo/3.webp" alt="Slide 3" width="500" height="350"></a>
-      </div>
-      <div class="mySlides">
-          <a href="" target="_blank"> <img class="slideshow-image" src="public/img/catalogo/4.webp" alt="Slide 4" width="500" height="350"></a>
-      </div>
-<div class="mySlides">
-           <a href="" target="_blank"><img class="slideshow-image" src="public/img/catalogo/5.webp" alt="Slide 5"></a>
-      </div>
-      <div class="mySlides">
-           <a href="" target="_blank"><img class="slideshow-image" src="public/img/catalogo/6.webp" alt="Slide 5"></a>
-      </div>
-      <div class="mySlides">
-          <a href="" target="_blank"> <img class="slideshow-image" src="public/img/catalogo/7.webp" alt="Slide 5"></a>
-      </div>
-      <div class="mySlides">
-         <a href="" target="_blank">  <img class="slideshow-image" src="public/img/catalogo/8.webp" alt="Slide 5"></a>
-      </div>
-   
-      <!-- Aggiungi più div per ogni immagine -->
-<br>
-      <!-- Pulsanti di navigazione -->
-      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-      <button class="next" onclick="plusSlides(1)">&#10095;</button>
-    
-    <!-- Fine dello slideshow -->
-    
-        <p id="testoSpeciale">
-           <strong>Murgiapizza</strong> è un'azienda che vende <strong>basi per pizza precotte</strong> in tutta <strong>Italia</strong> e all'estero.
-           <br>
-           Per tutti i nostri prodotti sono stati utilizzati ingredienti di qualità del territorio <b>pugliese</b>.
-         </p>
-    <!-- <button id="bottoneAComparsa">Il Tuo Bottone a Comparsa</button>-->
-   <a href="<?= base_url('chi-siamo') ?>">    <button class="bottonehome"><span>CHI SIAMO</span></button></a>
-        
-  <p id="testoSpeciale">
-           Spedizioni in tutto il mondo in modo facile e veloce.
-            <br>Richiedi subito un preventivo e assapora le  basi preparate <strong>Murgia pizza</strong>.
-         </p>
-         </div>
-</div>
-
-
-
-  <script src="./js/scriptscorrimento.js"></script>
 </body>
 

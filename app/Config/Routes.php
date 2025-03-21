@@ -21,7 +21,10 @@ $routes->get('fai-una-richiesta', 'Pages::view/fai-una-richiesta');
 $routes->get('contattaci', 'Pages::view/contattaci');
 $routes->get('blog', 'Pages::view/blog');
 
-// Rotte per le pagine
+
+$routes->get('base-pizza', 'Pages::view/base-pizza');
+$routes->get('panzerotto', 'Pages::view/panzerotto');
+
 
 
 // ✅ Rotte per la registrazione

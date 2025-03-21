@@ -12,7 +12,9 @@ class CatalogoController extends Controller
         $model = new CatalogoModel();
 
         // Recupera tutti i prodotti dal database
-        $prodotti = $model->findAll();
+        $prodotti = $model
+        ->orderBy('codiceprodotto', 'ASC')
+        ->findAll();
 
         // Restituisce i dati in formato JSON
         return $this->response->setJSON([

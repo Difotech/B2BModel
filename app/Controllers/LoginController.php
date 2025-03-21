@@ -51,10 +51,15 @@ class LoginController extends Controller
     }
 
     public function logout() {
+        // Rimuove le variabili specifiche della sessione
         session()->remove('isLoggedIn');
         session()->remove('userId');
         session()->remove('userName');
-        return redirect()->to('/login');
+    
+        // Distrugge completamente la sessione
+        session()->destroy();
+    
+        return redirect()->to('/login')->with('message', 'Sei stato disconnesso con successo.');
     }
     
   public function areaPersonale()
